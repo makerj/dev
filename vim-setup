@@ -1,16 +1,24 @@
 #!/bin/bash
 BASE=`pwd`
 
+# Install Plugin Manager ------------------------------------------------------
 if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
 	echo "Vundle is not found. cloning..."
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim    
 fi
 
+# Install Plugins -------------------------------------------------------------
 cp vimrc ~/.vimrc
 sudo apt-get install vim-rails ruby-dev -y
 vim +PluginInstall +qall
-
+# Install Plugins :: CommandT
 cd ~/.vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
 make
 cd $BASE
+# Install Plugins :: YouCompleteMe
+sudo apt-get install build-essential cmake clang python-dev python3-dev -y
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
+cd $BASE
+

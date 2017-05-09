@@ -7,6 +7,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'The-NERD-tree'
 Plugin 'wincent/command-t'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 "Basic Setups -----------------------------------------------------------------
