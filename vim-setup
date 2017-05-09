@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
+	echo "Vundle is not found. cloning..."
+	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim    
+fi
+
+cp vimrc ~/.vimrc
+sudo apt-get install vim-rails -y
+vim +PluginInstall +qall
