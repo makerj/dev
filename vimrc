@@ -29,6 +29,8 @@ set smartindent
 set autoindent
 syntax on
 "colorscheme solarized
+"Remember last buffer position
+:au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 "Shortcuts --------------------------------------------------------------------
 "Shortcuts :: Plugin
