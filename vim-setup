@@ -7,7 +7,7 @@ if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
 fi
 
 cp vimrc ~/.vimrc
-sudo apt-get install vim-rails -y
+sudo apt-get install vim-rails ruby-dev -y
 vim +PluginInstall +qall
 
 cd ~/.vim/bundle/command-t/ruby/command-t
