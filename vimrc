@@ -9,6 +9,7 @@ Plugin 'The-NERD-tree'
 Plugin 'wincent/command-t'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'morhetz/gruvbox'
 call vundle#end()
 
 "Basic Setups -----------------------------------------------------------------
@@ -28,7 +29,9 @@ set textwidth=120
 set smartindent
 set autoindent
 syntax on
-"colorscheme solarized
+colorscheme gruvbox
+set bg=dark
+
 "Remember last buffer position
 :au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
