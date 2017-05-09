@@ -35,6 +35,9 @@ map <F2> :NERDTreeToggle<CR> :vertical resize 60<CR>
 nmap <tab> :tabnext<CR>
 nmap <C-e> :CommandTBuffer<CR>
 nmap <S-e> :CommandT<CR>
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0 
+
 
 "Shortcuts :: Editor
 map <F12> :wqa!<CR>
