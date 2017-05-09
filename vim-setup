@@ -1,4 +1,5 @@
 #!/bin/bash
+BASE=`pwd`
 
 if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
 	echo "Vundle is not found. cloning..."
@@ -8,3 +9,8 @@ fi
 cp vimrc ~/.vimrc
 sudo apt-get install vim-rails -y
 vim +PluginInstall +qall
+
+cd ~/.vim/bundle/command-t/ruby/command-t
+ruby extconf.rb
+make
+cd $BASE
