@@ -16,7 +16,11 @@ set tabstop=4
 set shiftwidth=4
 "set expandtab " use whitespace for tab character
 set cindent
+set incsearch
 set hlsearch
+set ignorecase
+set smartcase
+set laststatus=2
 set title
 set textwidth=120
 set smartindent
