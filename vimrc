@@ -9,6 +9,8 @@ Plugin 'The-NERD-tree'
 Plugin 'wincent/command-t'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
+Plugin 'benmills/vimux'
 Plugin 'morhetz/gruvbox'
 call vundle#end()
 
@@ -48,8 +50,6 @@ let g:airline#extensions#tabline#enabled = 1
 "Shortcuts :: Editor
 map <F12> :wqa!<CR>
 nmap <BS> hx
-imap <C-w> <Esc>wwdbi
-imap <C-b> <Esc>dbi
 
 "Shortcuts :: External Utilties
 map <F10> :!make<CR>
