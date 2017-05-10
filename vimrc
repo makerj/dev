@@ -9,17 +9,16 @@ Plugin 'The-NERD-tree'
 Plugin 'wincent/command-t'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'benmills/vimux'
 Plugin 'morhetz/gruvbox'
+Plugin 'benmills/vimux'
+Plugin 'rdnetto/YCM-Generator'
 call vundle#end()
 
 "Basic Setups -----------------------------------------------------------------
 set number
 set softtabstop=4
 set tabstop=4
-set shiftwidth=4
-"set expandtab " use whitespace for tab character
+set shiftwidth=4 "set expandtab " use whitespace for tab character
 set cindent
 set incsearch
 set hlsearch
@@ -30,6 +29,7 @@ set title
 set textwidth=120
 set smartindent
 set autoindent
+set noswapfile
 syntax on
 colorscheme gruvbox
 set bg=dark
@@ -38,18 +38,25 @@ set bg=dark
 :au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 "Shortcuts --------------------------------------------------------------------
+let mapleader=","
 "Shortcuts :: Plugin
 map <F2> :NERDTreeToggle<CR> :vertical resize 60<CR>
 nmap <tab> :tabnext<CR>
 nmap <C-e> :CommandTBuffer<CR>
 nmap <S-e> :CommandT<CR>
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.pyyyy'
 let g:ycm_confirm_extra_conf = 0 
 let g:airline#extensions#tabline#enabled = 1
 
 "Shortcuts :: Editor
+nnoremap <leader>e :bn<CR>
+nnoremap <leader>q :bp<CR>
+nnoremap <leader>b :YcmCompleter GoToImprecise<CR>
+nnoremap z :bd<CR>
 map <F12> :wqa!<CR>
 nmap <BS> hx
+imap <C-w> <Esc>wwdbi
+imap <C-b> <Esc>dbi
 
 "Shortcuts :: External Utilties
 map <F10> :!make<CR>
