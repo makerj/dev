@@ -30,6 +30,7 @@ set textwidth=120
 set smartindent
 set autoindent
 set noswapfile
+set cursorline
 syntax on
 colorscheme gruvbox
 set bg=dark
