@@ -15,6 +15,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 "Basic Setups -----------------------------------------------------------------
