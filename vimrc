@@ -51,7 +51,7 @@ let g:airline#extensions#tabline#enabled = 1
 "Shortcuts :: Editor
 nnoremap <leader>e :bn<CR>
 nnoremap <leader>q :bp<CR>
-nnoremap <leader>b :YcmCompleter GoToImprecise<CR>
+nnoremap <C-i> :YcmCompleter GoToImprecise<CR>
 nnoremap z :bd<CR>
 map <F12> :wqa!<CR>
 nmap <BS> hx
