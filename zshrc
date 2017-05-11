@@ -99,6 +99,7 @@ alias djmakemigrations='python3 manage.py makemigrations'
 alias djmigrate='python3 manage.py migrate'
 alias update='sudo apt-get update && sudo apt-get upgrade -y'
 alias m=make
+alias fzfd='$(dirname $(fzf))'
 source ~/.oh-my-zsh/z.sh
 export TERM="xterm-256color" # To prevent the color scheme from crashing
                              # when using tmux and vim at the same time

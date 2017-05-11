@@ -1,9 +1,18 @@
 #!/bin/bash
+sudo apt-get install curl -y
 
 if [ ! -e /usr/bin/bash ]; then
 	sudo apt-get install zsh -y
 	chsh -s /usr/bin/zsh
 	curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+fi
+
+
+if [ ! -e /usr/bin/fzf ]; then
+	curl -O -L https://github.com/junegunn/fzf-bin/releases/download/0.16.7/fzf-0.16.7-linux_amd64.tgz
+	tar xf fzf-0.16.7-linux_amd64.tgz
+	sudo mv fzf /usr/bin/fzf
+	rm fzf-0.16.7-linux_amd64.tgz
 fi
 
 cp zshrc ~/.zshrc
