@@ -39,6 +39,9 @@ set noswapfile
 set cursorline
 syntax on
 colorscheme gruvbox
+if filereadable(expand("$HOME/.vim/bundle/gruvbox/colors/gruvbox.vim))
+    colorscheme gruvbox
+endif
 set bg=dark
 
 "Remember last buffer position
