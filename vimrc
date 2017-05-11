@@ -9,9 +9,9 @@ Plugin 'The-NERD-tree'
 Plugin 'wincent/command-t'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'morhetz/gruvbox'
 Plugin 'benmills/vimux'
-Plugin 'rdnetto/YCM-Generator'
 call vundle#end()
 
 "Basic Setups -----------------------------------------------------------------
@@ -51,8 +51,9 @@ let g:airline#extensions#tabline#enabled = 1
 "Shortcuts :: Editor
 nnoremap <leader>e :bn<CR>
 nnoremap <leader>q :bp<CR>
+nnoremap <leader>z :bd<CR>
 nnoremap <C-i> :YcmCompleter GoToImprecise<CR>
-nnoremap z :bd<CR>
+nnoremap <C-o> <C-o>zz
 map <F12> :wqa!<CR>
 nmap <BS> hx
 imap <C-w> <Esc>dwi
