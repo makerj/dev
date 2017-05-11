@@ -1,5 +1,4 @@
-"Plugins ----------------------------------------------------------------------
-set nocompatible
+"Plugins ---------------------------------------------------------------------- set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim "rtp == RunTimePath
 
@@ -49,17 +48,18 @@ map <F2> :NERDTreeToggle<CR> :vertical resize 50<CR>
 nmap <tab> :tabnext<CR>
 nmap <C-e> :CommandTBuffer<CR>
 nmap <S-e> :CommandT<CR>
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.pyyyy'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_confirm_extra_conf = 0
 let g:airline#extensions#tabline#enabled = 1
-let g:UltiSnipsExpandTrigger="<C-right>"                                                             
+let g:UltiSnipsExpandTrigger="<C-right>"
 
 "Shortcuts :: Editor
 nnoremap <leader>e :bn<CR>
-nnoremap <leader>q :bp<CR>
+nnoremap <leader>w :bp<CR>
 nnoremap <leader>z :bd<CR>
+nnoremap <leader>q :YcmCompleter GetDoc<CR>
 nnoremap <C-i> :YcmCompleter GoToImprecise<CR>
 nnoremap <C-o> <C-o>zz
 map <F12> :wqa!<CR>
