@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ ! -e /usr/bin/bash ]; then
+	sudo apt-get install zsh -y
+	chsh -s /usr/bin/zsh
+	curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+fi
+
+cp zshrc ~/.zshrc
