@@ -17,6 +17,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
 call vundle#end()
 
 "Basic Setups -----------------------------------------------------------------
