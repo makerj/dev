@@ -40,7 +40,7 @@ set bg=dark
 "Shortcuts --------------------------------------------------------------------
 let mapleader=","
 "Shortcuts :: Plugin
-map <F2> :NERDTreeToggle<CR> :vertical resize 60<CR>
+map <F2> :NERDTreeToggle<CR> :vertical resize 50<CR>
 nmap <tab> :tabnext<CR>
 nmap <C-e> :CommandTBuffer<CR>
 nmap <S-e> :CommandT<CR>
