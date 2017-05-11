@@ -4,3 +4,6 @@ if [ ! -e ~/.gitignore ]; then
 	git config --global core.excludesfile '~/.gitignore'
 fi
 
+git config --global user.name makerj
+git config --global user.email "ohenwkgdj@gmail.com"
+
