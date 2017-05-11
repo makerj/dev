@@ -53,6 +53,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
 let g:airline#extensions#tabline#enabled = 1
+let g:UltiSnipsExpandTrigger="<C-right>"                                                             
 
 "Shortcuts :: Editor
 nnoremap <leader>e :bn<CR>
