@@ -44,10 +44,9 @@ set bg=dark
 "Shortcuts --------------------------------------------------------------------
 let mapleader=","
 "Shortcuts :: Plugin
-map <F2> :NERDTreeToggle<CR> :vertical resize 50<CR>
-nmap <tab> :tabnext<CR>
-nmap <C-e> :CommandTBuffer<CR>
-nmap <S-e> :CommandT<CR>
+noremap <F2> :NERDTreeToggle<CR> :vertical resize 50<CR>
+nnoremap <C-e> :CommandTBuffer<CR>
+nnoremap <S-e> :CommandT<CR>
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -62,11 +61,11 @@ nnoremap <leader>z :bd<CR>
 nnoremap <leader>q :YcmCompleter GetDoc<CR>
 nnoremap <C-i> :YcmCompleter GoToImprecise<CR>
 nnoremap <C-o> <C-o>zz
-map <F12> :wqa!<CR>
-nmap <BS> hx
-imap <C-w> <Esc>dwi
-imap <C-b> <Esc>dbi
+noremap <F12> :wqa!<CR>
+nnoremap <BS> hx
+inoremap <C-w> <Esc>dwi
+inoremap <C-b> <Esc>dbi
 
 "Shortcuts :: External Utilties
-map <F10> :!make<CR>
-map <C-F10> :!make test<CR>
+noremap <F10> :!make<CR>
+noremap <C-F10> :!make test<CR>
