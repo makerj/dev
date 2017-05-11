@@ -55,7 +55,7 @@ nnoremap <C-i> :YcmCompleter GoToImprecise<CR>
 nnoremap z :bd<CR>
 map <F12> :wqa!<CR>
 nmap <BS> hx
-imap <C-w> <Esc>wwdbi
+imap <C-w> <Esc>dwi
 imap <C-b> <Esc>dbi
 
 "Shortcuts :: External Utilties
