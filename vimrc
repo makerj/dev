@@ -12,6 +12,9 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 Plugin 'morhetz/gruvbox'
 Plugin 'benmills/vimux'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 call vundle#end()
 
 "Basic Setups -----------------------------------------------------------------
