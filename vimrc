@@ -14,7 +14,7 @@ Plugin 'benmills/vimux'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'dkprice/vim-easygrep' "<leader>vv or :grep <pattern>
+Plugin 'mileszs/ack.vim'
 call vundle#end()
 
 "Basic Setups -----------------------------------------------------------------
