@@ -9,7 +9,7 @@ fi
 
 # Install Plugins -------------------------------------------------------------
 cp vimrc ~/.vimrc
-sudo apt-get install vim-gnome vim-nox vim-rails ruby-dev -y
+sudo apt-get install ack-grep vim-gnome vim-nox vim-rails ruby-dev -y
 vim +PluginInstall +qall
 # Install Plugins :: CommandT
 cd ~/.vim/bundle/command-t/ruby/command-t
