@@ -20,6 +20,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'mhinz/vim-startify'
 Plugin 'matze/vim-move'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
 call vundle#end()
 
 "Basic Setups -----------------------------------------------------------------
@@ -71,6 +72,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:UltiSnipsExpandTrigger="<C-right>"
 
 let g:move_key_modifier = 'C'
+
+let g:DoxygenToolkit_briefTag_pre=""
 
 "Shortcuts :: Editor
 nnoremap <leader>e :bn<CR>
