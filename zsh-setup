@@ -1,5 +1,8 @@
 #!/bin/bash
-sudo apt-get install curl -y
+if [ ! -e /usr/bin/indicator-multiload ]; then
+	# Essentials
+	sudo apt-get install curl build-essential git indicator-multiload unity-tweak-tool compizconfig-settings-manager compiz-plugins -y
+fi
 
 if [ ! -e /usr/bin/zsh ]; then
 	sudo apt-get install zsh -y
