@@ -53,21 +53,27 @@ set bg=dark
 let mapleader=","
 "Shortcuts :: Plugin
 noremap <F2> :NERDTreeToggle<CR> :vertical resize 50<CR>
+
 nnoremap <C-e> :CommandTBuffer<CR>
 nnoremap <S-e> :CommandT<CR>
+
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+nnoremap <leader>q :YcmCompleter GetDoc<CR>
+nnoremap <C-i> :YcmCompleter GoToImprecise<CR>
+
 let g:airline#extensions#tabline#enabled = 1
+
 let g:UltiSnipsExpandTrigger="<C-right>"
+
+let g:move_key_modifier = 'C'
 
 "Shortcuts :: Editor
 nnoremap <leader>e :bn<CR>
 nnoremap <leader>w :bp<CR>
 nnoremap <leader>z :bd<CR>
-nnoremap <leader>q :YcmCompleter GetDoc<CR>
-nnoremap <C-i> :YcmCompleter GoToImprecise<CR>
 nnoremap <C-o> <C-o>zz
 noremap <F12> :wqa!<CR>
 nnoremap <BS> hx
