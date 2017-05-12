@@ -39,6 +39,7 @@ set smartindent
 set autoindent
 set noswapfile
 set cursorline
+set clipboard=unnamedplus
 syntax on
 if filereadable(expand("$HOME/.vim/bundle/gruvbox/colors/gruvbox.vim"))
     colorscheme gruvbox
