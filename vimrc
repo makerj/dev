@@ -63,8 +63,8 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 nnoremap <leader>q :YcmCompleter GetDoc<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
-nnoremap <C-i> :YcmCompleter GoToImprecise<CR>
-nnoremap <C-p> :YcmCompleter GoToDeclaration<CR>
+nnoremap <C-i> :YcmCompleter GoToDeclaration<CR>
+nnoremap <C-o> <C-o>zz
 
 let g:airline#extensions#tabline#enabled = 1
 
@@ -76,7 +76,6 @@ let g:move_key_modifier = 'C'
 nnoremap <leader>e :bn<CR>
 nnoremap <leader>w :bp<CR>
 nnoremap <leader>z :bd<CR>
-nnoremap <C-o> <C-o>zz
 noremap <F12> <ESC>:wqa!<CR>
 nnoremap <BS> hx
 inoremap <C-w> <Esc>dwi
