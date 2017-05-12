@@ -19,6 +19,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'mhinz/vim-startify'
+Plugin 'matze/vim-move'
 call vundle#end()
 
 "Basic Setups -----------------------------------------------------------------
