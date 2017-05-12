@@ -22,7 +22,7 @@ fi
 
 # Install Plugins :: YouCompleteMe
 if [ ! -e ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]; then
-	sudo apt-get install build-essential cmake clang python-dev python3-dev -y
+	sudo apt-get install build-essential cmake clang python-dev python3-dev ack-grep -y
 	cd ~/.vim/bundle/YouCompleteMe
 	./install.py --clang-completer
 	cd ~/.vim
