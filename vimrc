@@ -21,7 +21,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'mhinz/vim-startify'
 Plugin 'matze/vim-move'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'Raimondi/delimitMate'
 call vundle#end()
 
 "Basic Setups -----------------------------------------------------------------
