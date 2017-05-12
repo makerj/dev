@@ -74,7 +74,7 @@ nnoremap <leader>e :bn<CR>
 nnoremap <leader>w :bp<CR>
 nnoremap <leader>z :bd<CR>
 nnoremap <C-o> <C-o>zz
-noremap <F12> :wqa!<CR>
+noremap <F12> <ESC>:wqa!<CR>
 nnoremap <BS> hx
 inoremap <C-w> <Esc>dwi
 inoremap <C-b> <Esc>dbi
