@@ -63,7 +63,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 nnoremap <leader>q :YcmCompleter GetDoc<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
-nnoremap <C-i> :YcmCompleter Goecise<CR>
+nnoremap <C-i> :YcmCompleter GoToImprecise<CR>
 
 let g:airline#extensions#tabline#enabled = 1
 
