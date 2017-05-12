@@ -40,7 +40,6 @@ set autoindent
 set noswapfile
 set cursorline
 syntax on
-colorscheme gruvbox
 if filereadable(expand("$HOME/.vim/bundle/gruvbox/colors/gruvbox.vim"))
     colorscheme gruvbox
 endif
@@ -83,3 +82,7 @@ inoremap <C-b> <Esc>dbi
 "Shortcuts :: External Utilties
 noremap <F10> :!make<CR>
 noremap <C-F10> :!make test<CR>
+
+call feedkeys("\<F2>")
+call feedkeys("\<C-w>w")
+
