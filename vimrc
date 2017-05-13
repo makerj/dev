@@ -83,8 +83,8 @@ nnoremap <leader>w :bp<CR>
 nnoremap <leader>z :bd<CR>
 noremap <F12> <ESC>:wqa!<CR>
 nnoremap <BS> hx
-inoremap <C-w> <Esc>dwi
-inoremap <C-b> <Esc>dbi
+inoremap <C-w> <C-o>de
+inoremap <C-b> <C-o>db
 
 "Shortcuts :: External Utilties
 nnoremap <F9> :!zsh<CR>

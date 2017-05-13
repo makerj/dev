@@ -104,5 +104,8 @@ source ~/.oh-my-zsh/z.sh
 export TERM="xterm-256color" # To prevent the color scheme from crashing
                              # when using tmux and vim at the same time
 
+export CC=/usr/bin/gcc
+export CXX=/usr/bin/g++
+
 clear
 
