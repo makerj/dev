@@ -75,6 +75,8 @@ let g:move_key_modifier = 'C'
 
 let g:DoxygenToolkit_briefTag_pre=""
 
+nnoremap <leader>d :Dox<CR>
+
 "Shortcuts :: Editor
 nnoremap <leader>e :bn<CR>
 nnoremap <leader>w :bp<CR>
