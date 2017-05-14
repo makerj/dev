@@ -7,6 +7,11 @@ if [ ! -e /usr/bin/indicator-multiload ]; then
 		unity-tweak-tool compizconfig-settings-manager compiz-plugins -y
 fi
 
+if [ ! -e /usr/local/bin/howdoi ]; then
+	sudo apt-get install python-pip python-dev python-lxml -y
+	sudo pip install howdoi
+fi
+
 if [ ! -e /usr/bin/fzf ]; then
 	curl -O -L https://github.com/junegunn/fzf-bin/releases/download/0.16.7/fzf-0.16.7-linux_amd64.tgz
 	tar xf fzf-0.16.7-linux_amd64.tgz
