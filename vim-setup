@@ -1,13 +1,6 @@
 #!/bin/bash
 BASE=`pwd`
 
-# Add PPA which offers latest vim ---------------------------------------------
-if (( ! $(apt-cache policy | grep -i 'vim' | wc -l) )); then
-	sudo add-apt-repository ppa:jonathonf/vim
-	sudo apt-get update
-	sudo apt-get install vim
-fi
-
 # Install Plugin Manager ------------------------------------------------------
 if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
 	echo "Vundle is not found. cloning..."
