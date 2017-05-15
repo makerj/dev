@@ -25,8 +25,9 @@ if [ ! -e ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]; then
 	sudo apt-get install build-essential cmake clang python-dev python3-dev ack-grep -y
 	cd ~/.vim/bundle/YouCompleteMe
 	./install.py --clang-completer
-	cd ~/.vim
-	curl -O -L https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py
-	cd $BASE
 fi
+## Update ycm_extra_conf everytime
+cd ~/.vim
+curl -O -L https://raw.githubusercontent.com/makerj/dev/master/ycm_extra_conf.py
+cd $BASE
 
