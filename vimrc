@@ -15,7 +15,6 @@ Plug 'honza/vim-snippets'
 Plug 'mileszs/ack.vim',					{'on': 'Ack', 'do': 'sudo apt-get install ack-grep -y'}
 Plug 'tpope/vim-fugitive',				{'on': 'Git'}
 Plug 'tpope/vim-commentary'
-Plug 'mhinz/vim-startify'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/DoxygenToolkit.vim',	{'on': 'Dox'}
 Plug 'tpope/vim-sleuth' "Indent Detctor
@@ -53,7 +52,6 @@ set bg=dark
 let mapleader=","
 "Shortcuts :: Plugin
 noremap <F2> :NERDTreeToggle<CR> :vertical resize 50<CR>
-let g:NERDTreeHijackNetrw = 0
 
 nnoremap <C-e> :Buffers<CR>
 nnoremap <S-e> :Files<CR>
@@ -81,7 +79,7 @@ nnoremap <leader>d :Dox<CR>
 nnoremap <leader>e :bn<CR>
 nnoremap <leader>w :bp<CR>
 nnoremap <leader>z :bd<CR>
-nnoremap <F12> <ESC>:NERDTreeClose<CR> <ESC>:wqa!<CR>
+nnoremap <F12> <ESC>:wqa!<CR>
 nnoremap <BS> hx
 inoremap <C-w> <C-o>de
 inoremap <C-b> <C-o>db
