@@ -38,6 +38,7 @@ set title
 set textwidth=120
 set smartindent
 set autoindent
+set autoread
 set noswapfile
 set cursorline
 set clipboard=unnamedplus
