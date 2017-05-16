@@ -1,0 +1,6 @@
+#!/bin/bash
+
+./terminal-setup
+./zsh-setup
+./git-setup
+./vim-setup
