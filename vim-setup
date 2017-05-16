@@ -1,5 +1,7 @@
 #!/bin/bash
 BASE=`pwd`
+sudo echo "Setup VIM..."
+
 if [ ! -e /usr/bin/cmake ]; then
 	sudo apt-get install cmake -y
 fi
@@ -16,8 +18,4 @@ vim +PlugInstall +qall
 
 # Install Plugins :: YouCompleteMe :: ycm_extra_conf
 curl -fLo ~/.vim/ycm_extra_conf.py https://raw.githubusercontent.com/makerj/dev/master/ycm_extra_conf.py
-# Install Plugins :: Ack
-if [ ! -e /usr/bin/ack-grep ]; then
-	sudo apt-get install ack-grep -y
-fi
 

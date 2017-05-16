@@ -2,6 +2,6 @@
 
 IS_NOPASSWD=$(sudo grep "junhui" /etc/sudoers | wc -l)
 if (( $IS_NOPASSWD < 1 )); then
-	sudo echo "junhui ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+	sudo echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 fi
 

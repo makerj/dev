@@ -11,12 +11,12 @@ Plug 'benmills/vimux'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'mileszs/ack.vim', {'on': 'Ack'}
+Plug 'mileszs/ack.vim', {'on': 'Ack', 'do': 'sudo apt-get install ack-grep -y'}
 Plug 'tpope/vim-fugitive', {'on': 'Git'}
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
 Plug 'matze/vim-move'
-Plug 'vim-scripts/DoxygenToolkit.vim', {'on', :'Dox'}
+Plug 'vim-scripts/DoxygenToolkit.vim', {'on': 'Dox'}
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
