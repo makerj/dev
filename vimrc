@@ -17,6 +17,7 @@ Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/DoxygenToolkit.vim',	{'on': 'Dox'}
+Plug 'tpope/vim-sleuth' "Indent Detctor
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
