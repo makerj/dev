@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim "rtp == RunTimePath
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'The-NERD-tree'
+Plugin 'scrooloose/nerdtree'
 Plugin 'wincent/command-t'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
