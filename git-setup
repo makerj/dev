@@ -4,7 +4,13 @@ if [ ! -e ~/.gitignore ]; then
 	git config --global core.excludesfile '~/.gitignore'
 fi
 
-git config --global user.name makerj
-git config --global user.email "ohenwkgdj@gmail.com"
+USER_CONFIGURED=$(git config --global user.name | wc -l)
+if (( USER_CONFIGURED < 1 )); then
+	read -p "Enter global user.name: " GIT_GLOBAL_USERNAME
+	git config --global user.name $GIT_GLOBAL_USERNAME
+	read -p "Enter global user.email: " GIT_GLOBAL_EMAIL
+	git config --global user.email GIT_GLOBAL_EMAIL
+fi
+
 git config --global push.default simple
 

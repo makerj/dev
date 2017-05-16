@@ -1,7 +1,8 @@
 #!/bin/bash
 
-IS_NOPASSWD=$(sudo grep "junhui" /etc/sudoers | wc -l)
+USERNAME=$(whoami)
+IS_NOPASSWD=$(sudo grep $USERNAME /etc/sudoers | wc -l)
 if (( $IS_NOPASSWD < 1 )); then
-	sudo echo "$(whoami) ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+	sudo echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 fi
 
