@@ -3,7 +3,7 @@ call plug#begin()
 Plug 'scrooloose/nerdtree',             {'on': ['NERDTreeToggle', 'NERDTreeClose']}
 Plug 'Xuyuanp/nerdtree-git-plugin',     {'on': 'NERDTreeToggle'}
 Plug 'junegunn/fzf',					{'dir': '~/.fzf', 'do': './install --all'}
-Plug 'junegunn/fzf.vim',				{'do': ['Files', 'Buffers']}
+Plug 'junegunn/fzf.vim',				{'on': ['Files', 'Buffers']}
 Plug 'vim-airline/vim-airline'
 Plug 'Valloric/YouCompleteMe',			{'do': './install.py --clang-completer'}
 Plug 'rdnetto/YCM-Generator',			{'on': 'YcmGenerateConfig'}
@@ -18,6 +18,7 @@ Plug 'tpope/vim-commentary'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/DoxygenToolkit.vim',	{'on': 'Dox'}
 Plug 'tpope/vim-sleuth' "Indent Detctor
+Plug 'vim-scripts/Conque-GDB',          {'on': 'ConqueGdb'}
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
