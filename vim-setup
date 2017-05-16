@@ -12,15 +12,6 @@ fi
 cp vimrc ~/.vimrc
 vim +PlugInstall +qall
 
-# Install Plugins :: CommandT
-if [ ! -e ~/.vim/bundle/command-t/ruby/command-t/ext.so ]; then
-	sudo apt-get install ack-grep vim-gnome vim-nox vim-rails ruby-dev -y
-	cd ~/.vim/bundle/command-t/ruby/command-t
-	ruby extconf.rb
-	make
-	cd $BASE
-fi
-
 # Install Plugins :: YouCompleteMe
 if [ ! -e ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]; then
 	sudo apt-get install build-essential cmake clang python-dev python3-dev ack-grep -y

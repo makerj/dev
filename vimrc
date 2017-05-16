@@ -2,7 +2,8 @@
 call plug#begin()
 Plug 'gmarik/Vundle.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'wincent/command-t'
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator'
@@ -52,8 +53,8 @@ let mapleader=","
 "Shortcuts :: Plugin
 noremap <F2> :NERDTreeToggle<CR> :vertical resize 50<CR>
 
-nnoremap <C-e> :CommandTBuffer<CR>
-nnoremap <S-e> :CommandT<CR>
+nnoremap <C-e> :Buffers<CR>
+nnoremap <S-e> :Files<CR>
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
