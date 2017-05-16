@@ -89,8 +89,8 @@ inoremap <C-b> <C-o>db
 
 "Shortcuts :: External Utilties
 nnoremap <F9> :!zsh<CR>
-nnoremap <F10> :!make<CR>
-nnoremap <C-F10> :!make test<CR>
+nnoremap <F10> :wa<CR><ESC> :!make<CR>
+nnoremap <C-F10> :wa<CR><ESC> :!make test<CR>
 
 call feedkeys("\<F2>")
 call feedkeys("\<C-w>w")
