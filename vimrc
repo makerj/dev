@@ -1,22 +1,22 @@
 "Plugins ----------------------------------------------------------------------
 call plug#begin()
-Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
-Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree',				{'on': 'NERDTreeToggle'}
+Plug 'junegunn/fzf',					{'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf.vim',				{'do': ['Files', 'Buffers']}
 Plug 'vim-airline/vim-airline'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer'}
-Plug 'rdnetto/YCM-Generator'
+Plug 'Valloric/YouCompleteMe',			{'do': './install.py --clang-completer'}
+Plug 'rdnetto/YCM-Generator',			{'on': 'YcmGenerateConfig'}
 Plug 'morhetz/gruvbox'
 Plug 'benmills/vimux'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'mileszs/ack.vim', {'on': 'Ack', 'do': 'sudo apt-get install ack-grep -y'}
-Plug 'tpope/vim-fugitive', {'on': 'Git'}
+Plug 'mileszs/ack.vim',					{'on': 'Ack', 'do': 'sudo apt-get install ack-grep -y'}
+Plug 'tpope/vim-fugitive',				{'on': 'Git'}
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
 Plug 'matze/vim-move'
-Plug 'vim-scripts/DoxygenToolkit.vim', {'on': 'Dox'}
+Plug 'vim-scripts/DoxygenToolkit.vim',	{'on': 'Dox'}
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
@@ -87,7 +87,4 @@ inoremap <C-b> <C-o>db
 nnoremap <F9> :!zsh<CR>
 nnoremap <F10> :wa<CR><ESC> :!make<CR>
 nnoremap <C-F10> :wa<CR><ESC> :!make test<CR>
-
-call feedkeys("\<F2>")
-call feedkeys("\<C-w>w")
 
