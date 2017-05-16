@@ -1,27 +1,23 @@
 "Plugins ----------------------------------------------------------------------
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim "rtp == RunTimePath
-
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'wincent/command-t'
-Plugin 'vim-airline/vim-airline'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'morhetz/gruvbox'
-Plugin 'benmills/vimux'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'mileszs/ack.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'mhinz/vim-startify'
-Plugin 'matze/vim-move'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-call vundle#end()
+call plug#begin()
+Plug 'gmarik/Vundle.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'wincent/command-t'
+Plug 'vim-airline/vim-airline'
+Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator'
+Plug 'morhetz/gruvbox'
+Plug 'benmills/vimux'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'mhinz/vim-startify'
+Plug 'matze/vim-move'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
 set number

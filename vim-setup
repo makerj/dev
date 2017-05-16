@@ -2,14 +2,15 @@
 BASE=`pwd`
 
 # Install Plugin Manager ------------------------------------------------------
-if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
-	echo "Vundle is not found. cloning..."
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -e ~/.vim/autoload/plug.vim ]; then
+	echo "Plugin Manager is not found. cloning..."
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 # Install Plugins -------------------------------------------------------------
 cp vimrc ~/.vimrc
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 
 # Install Plugins :: CommandT
 if [ ! -e ~/.vim/bundle/command-t/ruby/command-t/ext.so ]; then
