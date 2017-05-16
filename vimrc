@@ -1,6 +1,5 @@
 "Plugins ----------------------------------------------------------------------
 call plug#begin()
-Plug 'gmarik/Vundle.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
@@ -12,12 +11,12 @@ Plug 'benmills/vimux'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-fugitive'
+Plug 'mileszs/ack.vim', {'on': 'Ack'}
+Plug 'tpope/vim-fugitive', {'on': 'Git'}
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
 Plug 'matze/vim-move'
-Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim', {'on', :'Dox'}
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
