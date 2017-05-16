@@ -66,6 +66,14 @@ nnoremap <leader>f :YcmCompleter FixIt<CR>
 nnoremap <C-i> :YcmCompleter GoToDeclaration<CR>
 nnoremap <C-o> <C-o>zz
 
+let g:ConqueGdb_Leader = '\'
+"ConqueGdb_Leader r => run
+"ConqueGdb_Leader b => break-create
+"ConqueGdb_Leader d => break-delete
+"ConqueGdb_Leader s => step
+"ConqueGdb_Leader n => next
+"ConqueGdb_Leader p => print value
+"
 let g:airline#extensions#tabline#enabled = 1
 
 let g:UltiSnipsExpandTrigger="<C-right>"
