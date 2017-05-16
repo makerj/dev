@@ -1,6 +1,7 @@
 "Plugins ----------------------------------------------------------------------
 call plug#begin()
-Plug 'scrooloose/nerdtree',				{'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree',             {'on': ['NERDTreeToggle', 'NERDTreeClose']}
+Plug 'Xuyuanp/nerdtree-git-plugin',     {'on': 'NERDTreeToggle'}
 Plug 'junegunn/fzf',					{'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim',				{'do': ['Files', 'Buffers']}
 Plug 'vim-airline/vim-airline'
@@ -52,6 +53,7 @@ set bg=dark
 let mapleader=","
 "Shortcuts :: Plugin
 noremap <F2> :NERDTreeToggle<CR> :vertical resize 50<CR>
+let g:NERDTreeHijackNetrw = 0
 
 nnoremap <C-e> :Buffers<CR>
 nnoremap <S-e> :Files<CR>
@@ -79,7 +81,7 @@ nnoremap <leader>d :Dox<CR>
 nnoremap <leader>e :bn<CR>
 nnoremap <leader>w :bp<CR>
 nnoremap <leader>z :bd<CR>
-noremap <F12> <ESC>:wqa!<CR>
+nnoremap <F12> <ESC>:NERDTreeClose<CR> <ESC>:wqa!<CR>
 nnoremap <BS> hx
 inoremap <C-w> <C-o>de
 inoremap <C-b> <C-o>db
