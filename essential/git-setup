@@ -11,6 +11,7 @@ if (( USER_CONFIGURED < 1 )); then
 	read -p "Enter global user.email: " GIT_GLOBAL_EMAIL
 	git config --global user.email GIT_GLOBAL_EMAIL
 	git config --global credential.helper cache
+	git config --global help.autocorrect 1
 fi
 
 git config --global push.default simple
