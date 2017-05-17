@@ -1,6 +1,6 @@
 #!/bin/bash
 BASE=`pwd`
-sudo echo "Setup VIM..."
+sudo echo " "
 
 if [ ! -e /usr/bin/cmake ]; then
 	sudo apt-get install cmake -y

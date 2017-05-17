@@ -1,7 +1,11 @@
 #!/bin/bash
+BASE=`pwd`
+ESSENTIAL='essential'
 
-essential/terminal-setup
-essential/zsh-setup
-essential/git-setup
-essential/vim-setup
+cd $ESSENTIAL
+./terminal-setup
+./zsh-setup
+./git-setup
+./vim-setup
 
+cd $BASE
