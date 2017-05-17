@@ -13,9 +13,12 @@ if [ ! -e ~/.vim/autoload/plug.vim ]; then
 fi
 
 # Install Plugins -------------------------------------------------------------
+export PLUGIN_BASE="$HOME/.vim/plugged"
 cp vimrc ~/.vimrc
 vim +PlugInstall +qall
 
-# Install Plugins :: YouCompleteMe :: ycm_extra_conf
+# Install Plugins :: YouCompleteMe
+export YCM_BASE="$PLUGIN_BASE/YouCompleteMe"
+./vim-ycm-language-support
 cp ycm_extra_conf.py ~/.vim/
 

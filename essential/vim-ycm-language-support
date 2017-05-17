@@ -1,0 +1,48 @@
+#!/bin/bash
+if [[ ! -e $YCM_BASE ]]; then
+	echo "YouCompleteMe Base($YCM_BASE) is not found"
+	exit
+fi
+
+YCM_LANG_CONFIG="$HOME/.vim/ycm-languages"
+INSTALL_REQUIRED=0
+
+# C Family Support ------------------------------------------------------------
+if [[ ! -e $YCM_LANG_CONFIG ]]; then
+	touch $YCM_LANG_CONFIG
+	echo "--clang-completer" >> $YCM_LANG_CONFIG
+	INSTALL_REQUIRED=1
+fi
+
+# Javascript Support ----------------------------------------------------------
+if [[ -e /usr/local/nodejs/bin/node ]]; then
+	TERN_EXISTS=$(grep 'tern' $YCM_LANG_CONFIG | wc -l)
+	if (( ! $TERN_EXISTS )); then
+		echo "--tern-completer" >> $YCM_LANG_CONFIG
+		INSTALL_REQUIRED=1
+	fi
+fi
+
+# Go Support -----------------------------------------------------------------
+if [[ -e /usr/bin/go ]]; then
+	GOCODE_EXISTS=$(grep 'gocode' $YCM_LANG_CONFIG | wc -l)
+	if (( ! $GOCODE_EXISTS )); then
+		echo "--gocode-completer" >> $YCM_LANG_CONFIG
+		INSTALL_REQUIRED=1
+	fi
+fi
+
+# Rust Support ---------------------------------------------------------------
+if [[ -e $HOME/.cargo/bin/rustc ]]; then
+	RACER_EXISTS=$(grep 'racer' $YCM_LANG_CONFIG | wc -l)
+	if (( ! $RACER_EXISTS )); then
+		echo "--racer-completer" >> $YCM_LANG_CONFIG
+		INSTALL_REQUIRED=1
+	fi
+fi
+
+
+if (( $INSTALL_REQUIRED )); then
+	cd $YCM_BASE
+	./install.py $(cat YCM_LANG_CONFIG | tr '\n' ' ')
+fi

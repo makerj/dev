@@ -5,7 +5,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin',     {'on': 'NERDTreeToggle'}
 Plug 'junegunn/fzf',					{'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim',				{'on': ['Files', 'Buffers']}
 Plug 'vim-airline/vim-airline'
-Plug 'Valloric/YouCompleteMe',			{'do': './install.py --clang-completer'}
+Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator',			{'on': 'YcmGenerateConfig'}
 Plug 'morhetz/gruvbox'
 Plug 'benmills/vimux'
