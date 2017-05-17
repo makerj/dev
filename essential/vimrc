@@ -19,6 +19,7 @@ Plug 'matze/vim-move'
 Plug 'vim-scripts/DoxygenToolkit.vim',	{'on': 'Dox'}
 Plug 'tpope/vim-sleuth' "Indent Detctor
 Plug 'vim-scripts/Conque-GDB',          {'on': 'ConqueGdb'}
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
