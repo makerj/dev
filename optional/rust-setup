@@ -1,0 +1,4 @@
+#!/bin/bash
+curl https://sh.rustup.rs -sSf | sh
+echo "Logout is required to apply rust path properly"
+
