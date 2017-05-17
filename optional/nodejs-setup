@@ -1,5 +1,13 @@
 #!/bin/bash
 
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-sudo apt-get install -y nodejs
+NODE_EXISTS=$(which nodejs | wc -l)
+if [[ $NODE_EXISTS < 1 ]]; then
+  curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+fi
+
+TYPESCRIPT_EXISTS=$(npm -g ls | grep typescript | wc -l)
+if (( $TYPESCRIPT_EXISTS < 1 )); then
+  sudo npm install -g typescript
+fi
 
