@@ -10,6 +10,7 @@ if (( USER_CONFIGURED < 1 )); then
 	git config --global user.name $GIT_GLOBAL_USERNAME
 	read -p "Enter global user.email: " GIT_GLOBAL_EMAIL
 	git config --global user.email GIT_GLOBAL_EMAIL
+	git config --global credential.helper cache
 fi
 
 git config --global push.default simple
