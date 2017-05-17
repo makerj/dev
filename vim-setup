@@ -17,5 +17,5 @@ cp vimrc ~/.vimrc
 vim +PlugInstall +qall
 
 # Install Plugins :: YouCompleteMe :: ycm_extra_conf
-curl -fLo ~/.vim/ycm_extra_conf.py https://raw.githubusercontent.com/makerj/dev/master/ycm_extra_conf.py
+cp ycm_extra_conf.py ~/.vim/
 
