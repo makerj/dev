@@ -44,5 +44,5 @@ fi
 
 if (( $INSTALL_REQUIRED )); then
 	cd $YCM_BASE
-	./install.py $(cat YCM_LANG_CONFIG | tr '\n' ' ')
+	./install.py $(cat $YCM_LANG_CONFIG | tr '\n' ' ')
 fi
