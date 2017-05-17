@@ -20,6 +20,7 @@ Plug 'vim-scripts/DoxygenToolkit.vim',	{'on': 'Dox'}
 Plug 'tpope/vim-sleuth' "Indent Detctor
 Plug 'vim-scripts/Conque-GDB',          {'on': 'ConqueGdb'}
 Plug 'leafgarland/typescript-vim'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
