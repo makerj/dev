@@ -39,10 +39,9 @@ fi
 
 cp zshrc ~/.zshrc
 
-KEY_EXISTS=$(grep GOOGLE_CLOUD_API_KEY ~/.zshrc | wc -l)
-if (( $KEY_EXISTS < 1 )); then
+if [ ! -e ~/.zshrc-credential ]; then
 	read -p "Enter Google Cloud API Key: " GOOGLE_CLOUD_API_KEY
 	if [ ! -z $GOOGLE_CLOUD_API_KEY ]; then
-		echo "export GOOGLE_CLOUD_API_KEY=$GOOGLE_CLOUD_API_KEY" >> ~/.zshrc
+		echo "export GOOGLE_CLOUD_API_KEY=$GOOGLE_CLOUD_API_KEY" >> ~/.zshrc-credential
 	fi
 fi

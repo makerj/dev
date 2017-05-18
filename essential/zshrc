@@ -107,5 +107,9 @@ export TERM="xterm-256color" # To prevent the color scheme from crashing
 export CC=/usr/bin/gcc
 export CXX=/usr/bin/g++
 
+if [ -e ~/.zshrc-credential ]; then
+    source ~/.zshrc-credential
+fi
+
 clear
 
