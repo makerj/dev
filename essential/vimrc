@@ -22,6 +22,7 @@ Plug 'vim-scripts/Conque-GDB',          {'on': 'ConqueGdb'}
 Plug 'leafgarland/typescript-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'qpkorr/vim-bufkill'
+Plug 'makerj/vim-transit'
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
