@@ -1,4 +1,5 @@
 #!/bin/bash
+cat .makerj
 BASE=`pwd`
 ESSENTIAL='essential'
 
