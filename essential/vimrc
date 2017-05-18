@@ -40,6 +40,9 @@ set textwidth=120
 set smartindent
 set autoindent
 set autoread
+set autowriteall
+set updatetime=1000
+au CursorHold * checktime
 set noswapfile
 set cursorline
 set clipboard=unnamedplus
@@ -88,6 +91,8 @@ let g:DoxygenToolkit_briefTag_pre=""
 nnoremap <leader>d :Dox<CR>
 
 "Shortcuts :: Editor
+nnoremap _ zc
+nnoremap + zo
 nnoremap <leader>e :BF<CR>
 nnoremap <leader>w :BB<CR>
 nnoremap <leader>z :BD<CR>
