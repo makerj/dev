@@ -2,9 +2,14 @@
 BASE=`pwd`
 sudo echo " "
 
-if [ ! -e /usr/bin/cmake ]; then
-	sudo apt-get install cmake -y
+# Install latest vim ----------------------------------------------------------
+VIM_PPA_EXISTS=$(apt-cache policy | grep "pi-rho" | wc -l)
+if (( $VIM_PPA_EXISTS < 1 )); then
+	sudo add-apt-repository ppa:pi-rho/dev
+	sudo apt-get update
+	sudo apt-get install vim vim-gnome vim-nox vim-rails cmake -y
 fi
+
 # Install Plugin Manager ------------------------------------------------------
 if [ ! -e ~/.vim/autoload/plug.vim ]; then
 	echo "Plugin Manager is not found. cloning..."
