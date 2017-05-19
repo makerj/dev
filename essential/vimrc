@@ -94,8 +94,8 @@ nnoremap <leader>d :Dox<CR>
 "Shortcuts :: Editor
 nnoremap _ zc
 nnoremap + zo
-nnoremap <leader>e :BF<CR>
-nnoremap <leader>w :BB<CR>
+nnoremap <leader>e :bn<CR>
+nnoremap <leader>w :bp<CR>
 nnoremap <leader>z :BD<CR>
 nnoremap <F12> <ESC>:wqa!<CR>
 nnoremap <BS> hx
