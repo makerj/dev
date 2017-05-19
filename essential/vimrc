@@ -101,8 +101,8 @@ nnoremap <F12> <ESC>:wqa!<CR>
 nnoremap <BS> hx
 inoremap <C-w> <C-o>de
 inoremap <C-b> <C-o>db
-vnoremap <leader>t TransItBlock
-vnoremap <leader>T TransItBlockPut
+vnoremap t :TransItBlock<CR>
+vnoremap T :TransItBlockPut<CR>
 
 "Shortcuts :: External Utilties
 nnoremap <F9> :!zsh<CR>
