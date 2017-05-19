@@ -92,6 +92,7 @@ alias q=exit
 alias gitcommit='git add -A; git commit'
 alias gitreset='git reset --hard'
 alias gitclean='git reset --hard;git clean -fdx'
+alias gitstatus='git status'
 alias gitc='git add -A; git commit --amend'
 alias djtest='python3 manage.py test'
 alias djdeploy='sudo python3 deploy.py auto'
