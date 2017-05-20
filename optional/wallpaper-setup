@@ -1,2 +1,6 @@
 #!/bin/bash
-cp dark_circle_gray_black_9834_1920x1200.jpg  $HOME/Pictures/
+if [ -x "$(command -v gsettings)" ]; then
+	cp dark_circle_gray_black_9834_1920x1200.jpg  $HOME/Pictures/
+	gsettings set org.gnome.desktop.background picture-uri \
+		"file://"$(realpath $HOME/Pictures/dark_circle_gray_black_9834_1920x1200.jpg)
+fi
