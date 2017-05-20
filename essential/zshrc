@@ -37,11 +37,8 @@ export TERM="xterm-256color"	# To prevent the color scheme from crashing
 								# when using tmux and vim at the same time
 function gitpullall() {
 	BASE=$(pwd)
-	GIT_PROJECTS=$(find -maxdepth 2 -name ".git")
-	for PROJECT in $GIT_PROJECTS; do
-		cd $(dirname $PROJECT)
-		git pull
-		cd $BASE
+	for PROJECT in $(find -maxdepth 2 -name ".git"); do
+		cd $(dirname $PROJECT) && git pull && cd $BASE
 	done
 }
 
