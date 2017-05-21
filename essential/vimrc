@@ -93,6 +93,7 @@ let g:DoxygenToolkit_briefTag_pre=""
 nnoremap <leader>d :Dox<CR>
 
 "Shortcuts :: Editor
+nnoremap ; :
 nnoremap _ zc
 nnoremap + zo
 nnoremap <leader>e :bn<CR>
