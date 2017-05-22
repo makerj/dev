@@ -24,6 +24,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'makerj/vim-transit'
 Plug 'makerj/vim-pdf'
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
