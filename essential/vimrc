@@ -94,6 +94,8 @@ nnoremap <leader>d :Dox<CR>
 
 "Shortcuts :: Editor
 nnoremap <Tab> <C-w>w
+nnoremap <S-d> <C-d>
+nnoremap <S-f> <C-u>
 nnoremap ; :
 nnoremap _ zc
 nnoremap + zo
