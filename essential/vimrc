@@ -56,25 +56,14 @@ if filereadable(expand("$HOME/.vim/plugged/gruvbox/colors/gruvbox.vim"))
 endif
 set bg=dark
 
-"Remember last buffer position
-:au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-"Shortcuts --------------------------------------------------------------------
-let mapleader=","
-"Shortcuts :: Plugin
-noremap <F2> :NERDTreeToggle<CR> :vertical resize 50<CR>
-
-nnoremap <C-e> :Buffers<CR>
-nnoremap <S-e> :Files<CR>
+"Plugin Setups -----------------------------------------------------------------
+let g:transit_src = 'ko'
+let g:transit_dst = 'en'
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-nnoremap <leader>q :YcmCompleter GetDoc<CR>
-nnoremap <leader>f :YcmCompleter FixIt<CR>
-nnoremap <C-i> :YcmCompleter GoToDeclaration<CR>
-nnoremap <C-o> <C-o>zz
 
 let g:ConqueGdb_Leader = '\'
 "ConqueGdb_Leader r => run
@@ -91,6 +80,22 @@ let g:UltiSnipsExpandTrigger="<C-right>"
 let g:move_key_modifier = 'C'
 
 let g:DoxygenToolkit_briefTag_pre=""
+
+"Remember last buffer position
+:au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+"Shortcuts --------------------------------------------------------------------
+let mapleader=","
+"Shortcuts :: Plugin
+noremap <F2> :NERDTreeToggle<CR> :vertical resize 50<CR>
+
+nnoremap <C-e> :Buffers<CR>
+nnoremap <S-e> :Files<CR>
+
+nnoremap <leader>q :YcmCompleter GetDoc<CR>
+nnoremap <leader>f :YcmCompleter FixIt<CR>
+nnoremap <C-i> :YcmCompleter GoToDeclaration<CR>
+nnoremap <C-o> <C-o>zz
 
 nnoremap <leader>d :Dox<CR>
 
