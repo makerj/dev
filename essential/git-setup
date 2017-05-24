@@ -1,9 +1,4 @@
 #!/bin/bash
-if [ ! -e ~/.gitignore ]; then
-	cp gitignore ~/.gitignore
-	git config --global core.excludesfile '~/.gitignore'
-fi
-
 USER_CONFIGURED=$(git config --global user.name | wc -l)
 if (( USER_CONFIGURED < 1 )); then
 	read -p "Enter global user.name: " GIT_GLOBAL_USERNAME
@@ -16,3 +11,5 @@ git config --global credential.helper cache
 git config --global help.autocorrect 1
 git config --global push.default simple
 
+cp gitignore ~/.gitignore
+git config --global core.excludesfile '~/.gitignore'
