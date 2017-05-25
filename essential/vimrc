@@ -25,6 +25,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'makerj/vim-transit'
 Plug 'makerj/vim-pdf'
 Plug 'makerj/vim-cpp-enhanced-highlight'
+Plug 'vim-scripts/YankRing.vim'
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
