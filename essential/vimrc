@@ -57,6 +57,9 @@ if filereadable(expand("$HOME/.vim/plugged/gruvbox/colors/gruvbox.vim"))
 endif
 set bg=dark
 
+"Remember last buffer position
+:au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
 "Plugin Setups -----------------------------------------------------------------
 let g:transit_src = 'ko'
 let g:transit_dst = 'en'
@@ -82,8 +85,8 @@ let g:move_key_modifier = 'C'
 
 let g:DoxygenToolkit_briefTag_pre=""
 
-"Remember last buffer position
-:au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+let g:yankring_history_dir=expand("$HOME/.vim")
+
 
 "Shortcuts --------------------------------------------------------------------
 let mapleader=","
@@ -109,7 +112,7 @@ nnoremap + zo
 nnoremap <leader>e :bn<CR>
 nnoremap <leader>w :bp<CR>
 nnoremap <leader>z :BD<CR>
-nnoremap <F12> <ESC>:wqa!<CR>
+noremap <F12> <ESC><ESC>:wqa!<CR>
 nnoremap <BS> hx
 inoremap <C-w> <C-o>de
 inoremap <C-b> <C-o>db
