@@ -3,7 +3,7 @@ call plug#begin()
 Plug 'scrooloose/nerdtree',             {'on': ['NERDTreeToggle', 'NERDTreeClose']}
 Plug 'Xuyuanp/nerdtree-git-plugin',     {'on': 'NERDTreeToggle'}
 Plug 'junegunn/fzf',					{'dir': '~/.fzf', 'do': './install --all'}
-Plug 'junegunn/fzf.vim',				{'on': ['Files', 'Buffers']}
+Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator',			{'on': 'YcmGenerateConfig'}
@@ -12,7 +12,6 @@ Plug 'benmills/vimux'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'mileszs/ack.vim',					{'on': 'Ack', 'do': 'sudo apt-get install silversearcher-ag -y'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'matze/vim-move'
@@ -86,8 +85,6 @@ let g:move_key_modifier = 'C'
 let g:DoxygenToolkit_briefTag_pre=""
 
 let g:yankring_history_dir=expand("$HOME/.vim")
-
-let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "Shortcuts --------------------------------------------------------------------
 let mapleader=","

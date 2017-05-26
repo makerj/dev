@@ -27,3 +27,8 @@ export YCM_BASE="$PLUGIN_BASE/YouCompleteMe"
 ./vim-ycm-language-support
 cp ycm_extra_conf.py ~/.vim/
 
+# Install Plugins :: fzf.vim :: Ag
+if [ ! -e /usr/bin/ag ]; then
+	sudo apt-get install silversearcher-ag -y
+fi
+
