@@ -12,7 +12,7 @@ Plug 'benmills/vimux'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'mileszs/ack.vim',					{'on': 'Ack', 'do': 'sudo apt-get install ack-grep -y'}
+Plug 'mileszs/ack.vim',					{'on': 'Ack', 'do': 'sudo apt-get install silversearcher-ag -y'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'matze/vim-move'
@@ -87,6 +87,7 @@ let g:DoxygenToolkit_briefTag_pre=""
 
 let g:yankring_history_dir=expand("$HOME/.vim")
 
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "Shortcuts --------------------------------------------------------------------
 let mapleader=","
