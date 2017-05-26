@@ -17,7 +17,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/DoxygenToolkit.vim',	{'on': 'Dox'}
-Plug 'tpope/vim-sleuth' "Indent Detctor
+"Plug 'tpope/vim-sleuth' "Indent Detctor
 Plug 'vim-scripts/Conque-GDB',          {'on': 'ConqueGdb'}
 Plug 'leafgarland/typescript-vim'
 Plug 'rust-lang/rust.vim'
