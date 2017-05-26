@@ -38,8 +38,11 @@ export TERM="xterm-256color"	# To prevent the color scheme from crashing
 function gitpullall() {
 	BASE=$(pwd)
 	for PROJECT in $(find -maxdepth 2 -name ".git"); do
-		cd $(dirname $PROJECT) && git pull && cd $BASE
+		cd $(dirname $PROJECT)
+		git pull &
+		cd $BASE
 	done
+	wait
 }
 
 # Credentials -----------------------------------------------------------------
