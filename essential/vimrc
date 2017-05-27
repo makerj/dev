@@ -59,6 +59,18 @@ set bg=dark
 "Remember last buffer position
 :au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
+"Press <Space> to toggle numbering
+let s:is_rel = 0
+func! s:ToggleNumbering()
+	if s:is_rel
+		set norelativenumber
+		let s:is_rel = 0
+	else
+		set relativenumber
+		let s:is_rel = 1
+	endif
+endfunc
+nnoremap <silent> <Space> :call <SID>ToggleNumbering()<CR>
 "Plugin Setups -----------------------------------------------------------------
 let g:transit_src = 'ko'
 let g:transit_dst = 'en'
