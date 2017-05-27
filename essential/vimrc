@@ -70,7 +70,6 @@ func! s:ToggleNumbering()
 		let s:is_rel = 1
 	endif
 endfunc
-nnoremap <silent> <Space> :call <SID>ToggleNumbering()<CR>
 "Plugin Setups -----------------------------------------------------------------
 let g:transit_src = 'ko'
 let g:transit_dst = 'en'
@@ -114,21 +113,21 @@ nnoremap <C-o> <C-o>zz
 nnoremap <leader>d :Dox<CR>
 
 "Shortcuts :: Editor
-nnoremap <S-d> <C-d>
-nnoremap <S-f> <C-u>
 nnoremap ; :
 nnoremap _ zc
 nnoremap + zo
 nnoremap <leader>e :bn<CR>
 nnoremap <leader>w :bp<CR>
 nnoremap <leader>z :BD<CR>
-noremap <F12> <ESC><ESC>:wqa!<CR>
+nnoremap <F12> <ESC><ESC>:wqa!<CR>
 nnoremap <F8> :setlocal ts=8<CR>
 nnoremap <BS> hx
 inoremap <C-w> <C-o>de
 inoremap <C-b> <C-o>db
 vnoremap t :TransItBlock<CR>
 vnoremap T :TransItBlockPut<CR>
+nnoremap <Space> <C-w>w
+nnoremap <silent> <leader><Space> :call <SID>ToggleNumbering()<CR>
 
 "Shortcuts :: External Utilties
 nnoremap <F9> :!$SHELL<CR>
