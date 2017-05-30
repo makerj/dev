@@ -122,6 +122,6 @@ nnoremap <silent> <leader><Space> :ToggleNumbering<CR>
 
 "Shortcuts :: External Utilties
 nnoremap <F9> :!$SHELL<CR>
-nnoremap <F10> :wa<CR><ESC>:!make<CR>
+nnoremap <F10> :wa<CR><ESC>:!make -j8<CR>
 nnoremap <C-F10> :wa<CR><ESC>:!make test<CR>
 
