@@ -24,7 +24,7 @@ if [[ -e /usr/local/nodejs/bin/node ]]; then
 fi
 
 # Go Support -----------------------------------------------------------------
-if [[ -e /usr/bin/go ]]; then
+if [[ -e /usr/local/go ]]; then
 	GOCODE_EXISTS=$(grep 'gocode' $YCM_LANG_CONFIG | wc -l)
 	if (( ! $GOCODE_EXISTS )); then
 		echo "--gocode-completer" >> $YCM_LANG_CONFIG
