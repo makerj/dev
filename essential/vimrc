@@ -107,6 +107,7 @@ nnoremap <leader>n :ParseNumber<CR>
 nnoremap ; :
 nnoremap _ zc
 nnoremap + zo
+nnoremap <leader>g :execute ":Ag ".expand("<cword>")<CR>
 nnoremap <leader>e :bn<CR>
 nnoremap <leader>w :bp<CR>
 nnoremap <leader>z :BD<CR>
