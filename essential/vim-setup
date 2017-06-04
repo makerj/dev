@@ -7,7 +7,10 @@ VIM_PPA_EXISTS=$(apt-cache policy | grep "pi-rho" | wc -l)
 if (( $VIM_PPA_EXISTS < 1 )); then
 	sudo add-apt-repository ppa:pi-rho/dev
 	sudo apt-get update
-	sudo apt-get install vim vim-gnome vim-nox vim-rails cmake -y
+	sudo apt-get install vim vim-nox vim-rails cmake -y
+	if [ -e /usr/bin/X ]; then
+		sudo apt-get install vim-gnome -y # For clipboard sharing
+	fi
 fi
 
 # Install Plugin Manager ------------------------------------------------------
