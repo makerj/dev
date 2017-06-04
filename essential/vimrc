@@ -64,12 +64,12 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 let g:transit_src = 'ko'
 let g:transit_dst = 'en'
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = expand("$HOME/.vim/ycm_extra_conf.py")
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_python_binary_path = 'python3'
-let g:ycm_rust_src_path = '~/.cargo/rust/src'
+let g:ycm_rust_src_path = expand("$HOME/.cargo/rust/src")
 
 
 let g:ConqueGdb_Leader = '\'
