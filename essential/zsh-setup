@@ -1,18 +1,15 @@
 #!/bin/bash
 
 # Essential Utilties ------------------------------------------------------------------------------
-if [ ! -e /usr/bin/indicator-multiload ]; then
-	sudo apt-get install \
-		curl build-essential git indicator-multiload \
-		unity-tweak-tool compizconfig-settings-manager compiz-plugins -y
+if hash X; then
+	if [ ! -e /usr/bin/indicator-multiload ]; then
+		sudo apt-get install \
+			curl build-essential git indicator-multiload \
+			unity-tweak-tool compizconfig-settings-manager compiz-plugins -y
+	fi
 fi
 
-if [ ! -e /usr/local/bin/howdoi ]; then
-	sudo apt-get install python-pip python-dev python-lxml -y
-	sudo pip install howdoi
-fi
-
-if [ ! -e /usr/bin/fzf ]; then
+if ! hash fzf; then
 	curl -O -L https://github.com/junegunn/fzf-bin/releases/download/0.16.7/fzf-0.16.7-linux_amd64.tgz
 	tar xf fzf-0.16.7-linux_amd64.tgz
 	sudo mv fzf /usr/bin/fzf
@@ -20,7 +17,7 @@ if [ ! -e /usr/bin/fzf ]; then
 fi
 
 # zsh ---------------------------------------------------------------------------------------------
-if [ ! -e /usr/bin/zsh ]; then
+if ! hash zsh; then
 	sudo apt-get install zsh -y
 	chsh -s /usr/bin/zsh
 fi

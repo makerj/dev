@@ -1,9 +1,10 @@
 #!/bin/bash
 
-if [ ! -e /usr/local/go ]; then
+if ! hash go; then
 	curl -O -L https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz
 	tar xf go1.8.3.linux-amd64.tar.gz && rm go1.8.3.linux-amd64.tar.gz
 	sudo mv go /usr/local/
 	echo "export PATH=\$PATH:/usr/local/go/bin" >> $HOME/.profile
+	echo "Logout is required to apply rust path properly"
 fi
 

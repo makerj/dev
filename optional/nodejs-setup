@@ -5,7 +5,7 @@ NODE_VERSION="v6.10.3"
 NODE_PACK="node-$NODE_VERSION-linux-x64"
 NPM="/usr/local/nodejs/bin/npm"
 
-if [[ ! -e /usr/local/nodejs/bin/node ]]; then
+if ! hash node; then
   curl -o nodejs.tar.xz "https://nodejs.org/dist/$NODE_VERSION/$NODE_PACK.tar.xz"
   tar xf nodejs.tar.xz && rm nodejs.tar.xz
   sudo mkdir -p /usr/local/nodejs

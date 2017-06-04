@@ -1,4 +1,8 @@
 #!/bin/bash
+if ! hash git; then
+	sudo apt-get install git -y
+fi
+
 USER_CONFIGURED=$(git config --global user.name | wc -l)
 if (( USER_CONFIGURED < 1 )); then
 	read -p "Enter global user.name: " GIT_GLOBAL_USERNAME

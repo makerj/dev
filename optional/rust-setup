@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ ! -e $HOME/.cargo ]]; then
+if ! hash rustc; then
   curl https://sh.rustup.rs -sSf | sh
   git clone https://github.com/rust-lang/rust ~/.cargo/rust
   echo "Logout is required to apply rust path properly"
