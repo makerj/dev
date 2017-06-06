@@ -9,7 +9,7 @@ if (( $VIM_PPA_EXISTS < 1 )); then
 	sudo apt-get update
 	sudo apt-get install python-dev -y
 	sudo apt-get install vim vim-nox vim-rails cmake -y
-	if [ -e /usr/bin/X ]; then
+	if hash X; then
 		sudo apt-get install vim-gnome -y # For clipboard sharing
 	fi
 fi
@@ -32,7 +32,7 @@ export YCM_BASE="$PLUGIN_BASE/YouCompleteMe"
 cp ycm_extra_conf.py ~/.vim/
 
 # Install Plugins :: fzf.vim :: Ag
-if [ ! -e /usr/bin/ag ]; then
+if hash ag; then
 	sudo apt-get install silversearcher-ag -y
 fi
 
