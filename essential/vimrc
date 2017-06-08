@@ -125,6 +125,7 @@ vnoremap t :TransItBlock<CR>
 vnoremap T :TransItBlockPut<CR>
 nnoremap <Space> <C-w>w
 nnoremap <silent> <leader><Space> :ToggleNumbering<CR>
+nnoremap <C-l> :Lines<CR>
 
 "Shortcuts :: External Utilties
 nnoremap <F9> :!$SHELL<CR>
