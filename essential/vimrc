@@ -28,7 +28,7 @@ Plug 'makerj/vim-parsenumber'
 Plug 'makerj/vim-cpp-enhanced-highlight'
 Plug 'makerj/felis-cat-igirisu-toast-express' " ESC to english mode for fcitx IM
 Plug 'vim-scripts/YankRing.vim'
-Plug 'vim-scripts/gtags.vim'
+Plug 'makerj/gtags.vim'
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
@@ -107,6 +107,8 @@ nnoremap <C-o> <C-o>zz
 
 nnoremap <leader>d :Dox<CR>
 nnoremap <leader>n :ParseNumber<CR>
+nnoremap <leader>j :GtagsCursor<CR>
+nnoremap <leader>J :execute ":Gtags -r ".expand("<cword>")<CR>
 
 "Shortcuts :: Editor
 nnoremap ; :
