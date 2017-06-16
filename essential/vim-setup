@@ -9,7 +9,7 @@ if (( $VIM_PPA_EXISTS < 1 )); then
 	sudo apt-get install software-properties-common -y
 	sudo add-apt-repository ppa:pi-rho/dev
 	sudo apt-get update
-	sudo apt-get install python-dev -y
+	sudo apt-get install python-dev global -y
 	sudo apt-get install vim vim-nox vim-rails cmake -y
 	if hash X; then
 		sudo apt-get install vim-gnome -y # For clipboard sharing

@@ -43,7 +43,6 @@ set ignorecase
 set smartcase
 set laststatus=2
 set title
-set textwidth=120
 set smartindent
 set autoindent
 set autoread
