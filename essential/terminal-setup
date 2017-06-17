@@ -6,7 +6,7 @@ if [ ! -e /etc/sudoers.d/$USERNAME ]; then
 fi
 
 if ! hash git; then
-	sudo apt-get install git build-essential curl automake -y
+	sudo apt-get install git build-essential curl automake cscope -y
 fi
 if ! hash lynx; then
 	sudo apt-get install lynx -y
