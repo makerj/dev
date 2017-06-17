@@ -17,6 +17,13 @@ if (( $VIM_PPA_EXISTS < 1 )); then
 fi
 
 # Install utilities ------------------------------------------------------------
+if ! hash ctags; then
+	sudo apt-get install automake -y
+	git clone https://github.com/universal-ctags/ctags.git
+	cd ctags
+	./autogen.sh && ./configure && sudo make install
+	cd $BASE && rm -rf ctags
+fi
 
 # Install Plugin Manager ------------------------------------------------------
 if [ ! -e ~/.vim/autoload/plug.vim ]; then

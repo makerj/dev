@@ -29,7 +29,6 @@ Plug 'makerj/vim-cpp-enhanced-highlight'
 Plug 'makerj/felis-cat-igirisu-toast-express' " ESC to english mode for fcitx IM
 Plug 'vim-scripts/YankRing.vim'
 Plug 'majutsushi/tagbar'
-Plug 'universal-ctags/ctags',			{'do': './autogen.sh && ./configure && sudo make install'}
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
