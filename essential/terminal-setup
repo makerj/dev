@@ -5,3 +5,9 @@ if [ ! -e /etc/sudoers.d/$USERNAME ]; then
 	echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USERNAME
 fi
 
+if ! hash git; then
+	sudo apt-get install git build-essential curl automake -y
+fi
+if ! hash lynx; then
+	sudo apt-get install lynx -y
+fi

@@ -7,6 +7,7 @@ ESSENTIAL='essential'
 
 cd $ESSENTIAL
 ./terminal-setup
+./desktop-setup
 ./zsh-setup
 ./git-setup
 ./vim-setup

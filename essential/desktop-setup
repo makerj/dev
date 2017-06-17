@@ -1,0 +1,18 @@
+#!/bin/bash
+if hash X; then
+	if [ ! -e /usr/bin/indicator-multiload ]; then
+		sudo apt-get install indicator-multiload -y
+	fi
+
+	PAPER_THEME_EXISTS=$(apt-cache policy | grep snwh | wc -l)
+	if (( $PAPER_THEME_EXISTS < 1 )); then
+		sudo add-apt-repository ppa:snwh/pulp -y
+		sudo apt-get update
+		sudo apt-get install paper-icon-theme paper-gtk-theme unity-tweak-tool -y
+	fi
+
+	if ! hash compizconfig-settings-manager; then
+		sudo apt-get install compizconfig-settings-manager compiz-plugins -y
+	fi
+fi
+
