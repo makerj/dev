@@ -16,7 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/DoxygenToolkit.vim',	{'on': 'Dox'}
-"Plug 'tpope/vim-sleuth' "Indent Detctor
+Plug 'tpope/vim-sleuth' "Indent Detctor
 Plug 'vim-scripts/Conque-GDB',          {'on': 'ConqueGdb'}
 Plug 'leafgarland/typescript-vim'
 Plug 'rust-lang/rust.vim'
@@ -29,6 +29,7 @@ Plug 'makerj/vim-cpp-enhanced-highlight'
 Plug 'makerj/felis-cat-igirisu-toast-express' " ESC to english mode for fcitx IM
 Plug 'vim-scripts/YankRing.vim'
 Plug 'majutsushi/tagbar'
+Plug 'hari-rangarajan/CCTree'
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
@@ -91,11 +92,6 @@ let g:DoxygenToolkit_briefTag_pre=""
 
 let g:yankring_history_dir=expand("$HOME/.vim")
 
-let g:Gtags_No_Auto_Jump = 1
-let g:Gtags_Close_When_Single = 1
-" let g:Gtags_Auto_Update = 1
-
-
 "Shortcuts --------------------------------------------------------------------
 let mapleader=","
 "Shortcuts :: Plugin
@@ -112,8 +108,9 @@ nnoremap <C-o> <C-o>zz
 
 nnoremap <leader>d :Dox<CR>
 nnoremap <leader>n :ParseNumber<CR>
-nnoremap <leader>j :GtagsCursor<CR>
-nnoremap <leader>J :execute ":Gtags -r ".expand("<cword>")<CR>
+nnoremap <leader>j :CCTreeTraceForward<CR>
+nnoremap <leader>J :CCTreeTraceReverse<CR>
+nnoremap <F4> :CCTreeLoadDB<CR>
 
 "Shortcuts :: Editor
 nnoremap ; :
