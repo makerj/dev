@@ -91,6 +91,11 @@ let g:DoxygenToolkit_briefTag_pre=""
 
 let g:yankring_history_dir=expand("$HOME/.vim")
 
+let g:Gtags_No_Auto_Jump = 1
+let g:Gtags_Close_When_Single = 1
+" let g:Gtags_Auto_Update = 1
+
+
 "Shortcuts --------------------------------------------------------------------
 let mapleader=","
 "Shortcuts :: Plugin
