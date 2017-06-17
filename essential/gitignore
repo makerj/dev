@@ -8,7 +8,7 @@ TAGS
 cscope.files
 cscope.out
 cscope.po.out
-.tags
+tags
 
 *.o
 *.ko
