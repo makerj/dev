@@ -11,7 +11,8 @@ if hash X; then
 		sudo apt-get install paper-icon-theme paper-gtk-theme unity-tweak-tool -y
 	fi
 
-	if ! hash compizconfig-settings-manager; then
+	COMPIZ_PLUGINS_EXISTS=$(dpkg --get-selections | grep compizconfig-settings-manager | wc -l)
+	if (( $COMPIZ_PLUGINS_EXISTS < 1 )); then
 		sudo apt-get install compizconfig-settings-manager compiz-plugins -y
 	fi
 fi
