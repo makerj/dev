@@ -32,6 +32,7 @@ alias djmigrate='python3 manage.py migrate'
 alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y'
 alias m=make
 alias fzfd='$(dirname $(fzf))'
+alias lynx='lynx -vikeys '
 source ~/.oh-my-zsh/z.sh
 export TERM="xterm-256color"	# To prevent the color scheme from crashing
 								# when using tmux and vim at the same time

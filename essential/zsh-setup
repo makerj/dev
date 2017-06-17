@@ -9,6 +9,9 @@ if hash X; then
 	fi
 fi
 
+if ! hash lynx; then
+	sudo apt-get install lynx -y
+fi
 if ! hash fzf; then
 	curl -O -L https://github.com/junegunn/fzf-bin/releases/download/0.16.7/fzf-0.16.7-linux_amd64.tgz
 	tar xf fzf-0.16.7-linux_amd64.tgz
