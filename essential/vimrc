@@ -29,6 +29,7 @@ Plug 'makerj/vim-cpp-enhanced-highlight'
 Plug 'makerj/felis-cat-igirisu-toast-express' " ESC to english mode for fcitx IM
 Plug 'vim-scripts/YankRing.vim'
 Plug 'makerj/gtags.vim'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
@@ -47,7 +48,7 @@ set smartindent
 set autoindent
 set autoread
 set autowriteall
-set updatetime=1000
+set updatetime=100
 au CursorHold * checktime
 set noswapfile
 set cursorline
@@ -100,6 +101,7 @@ let g:Gtags_Close_When_Single = 1
 let mapleader=","
 "Shortcuts :: Plugin
 noremap <F2> :NERDTreeToggle<CR> :vertical resize 50<CR>
+noremap <F3> :TagbarToggle<CR>
 
 nnoremap <C-e> :Buffers<CR>
 nnoremap <S-e> :Files<CR>
