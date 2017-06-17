@@ -17,17 +17,6 @@ if (( $VIM_PPA_EXISTS < 1 )); then
 fi
 
 # Install utilities ------------------------------------------------------------
-if ! hash global; then
-	GLOBAL_VERSION="global-6.5.7"
-	sudo apt-get install libncurses5-dev -y
-	curl -O -L http://tamacom.com/global/$GLOBAL_VERSION.tar.gz
-	tar xf $GLOBAL_VERSION.tar.gz
-	cd $GLOBAL_VERSION
-	./configure
-	make && sudo make install
-	cd $BASE
-	rm -rf $GLOBAL_VERSION*
-fi
 
 # Install Plugin Manager ------------------------------------------------------
 if [ ! -e ~/.vim/autoload/plug.vim ]; then

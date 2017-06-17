@@ -28,7 +28,6 @@ Plug 'makerj/vim-parsenumber'
 Plug 'makerj/vim-cpp-enhanced-highlight'
 Plug 'makerj/felis-cat-igirisu-toast-express' " ESC to english mode for fcitx IM
 Plug 'vim-scripts/YankRing.vim'
-Plug 'makerj/gtags.vim'
 Plug 'majutsushi/tagbar'
 call plug#end()
 
