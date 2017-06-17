@@ -26,7 +26,7 @@ fi
 # Install Plugins -------------------------------------------------------------
 export PLUGIN_BASE="$HOME/.vim/plugged"
 cp vimrc ~/.vimrc
-vim +PlugInstall +qall
+vim +PlugUpdate +qall
 
 # Install Plugins :: YouCompleteMe
 export YCM_BASE="$PLUGIN_BASE/YouCompleteMe"
