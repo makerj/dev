@@ -1,15 +1,14 @@
 #!/bin/bash
 git pull
-
 cat .makerj
+
 BASE=`pwd`
 ESSENTIAL='essential'
-
 cd $ESSENTIAL
+./essential/ppa-setup
 ./terminal-setup
 ./desktop-setup
 ./zsh-setup
 ./git-setup
 ./vim-setup
-
 cd $BASE

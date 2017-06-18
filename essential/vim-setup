@@ -5,12 +5,8 @@ sudo echo " "
 # Install latest vim ----------------------------------------------------------
 VIM_PPA_EXISTS=$(apt-cache policy | grep "pi-rho" | wc -l)
 if (( $VIM_PPA_EXISTS < 1 )); then
-	sudo apt-get update
-	sudo apt-get install software-properties-common -y
-	sudo add-apt-repository ppa:pi-rho/dev
-	sudo apt-get update
-	sudo apt-get install python-dev -y
-	sudo apt-get install vim vim-nox vim-rails cmake -y
+	sudo apt-get install cmake python-dev -y
+	sudo apt-get install vim vim-nox vim-rails -y
 	if hash X; then
 		sudo apt-get install vim-gnome -y # For clipboard sharing
 	fi

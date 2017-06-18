@@ -6,8 +6,6 @@ if hash X; then
 
 	PAPER_THEME_EXISTS=$(apt-cache policy | grep snwh | wc -l)
 	if (( $PAPER_THEME_EXISTS < 1 )); then
-		sudo add-apt-repository ppa:snwh/pulp -y
-		sudo apt-get update
 		sudo apt-get install paper-icon-theme paper-gtk-theme unity-tweak-tool -y
 	fi
 

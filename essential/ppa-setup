@@ -1,0 +1,30 @@
+#!/bin/bash
+PPA_SET=0
+PPA_UPDATE_RERUIED=0
+
+function ppa_start() {
+	PPA_SET=$(apt-cache policy)
+	PPA_UPDATE_RERUIED=0
+}
+
+function ppa_append() {
+	for PPA in $@; do
+		PPA_EXISTS=$(echo $PPA_SET | grep $PPA | wc -l)
+		if (( ! $PPA_EXISTS )); then
+			sudo add-apt-repository ppa:$PPA -y
+			PPA_UPDATE_RERUIED=1
+		fi
+	done
+}
+
+function ppa_end() {
+	if (( $UPDATE_RERUIED )); then
+		sudo apt-get update
+	fi
+}
+
+ppa_start
+ppa_append snwh/pulp	# unity theme
+ppa_append pi-rho/dev	# vim8
+ppa_end
+
