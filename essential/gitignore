@@ -8,6 +8,7 @@ TAGS
 cscope.files
 cscope.out
 cscope.po.out
+cscope.xref
 tags
 
 *.o
