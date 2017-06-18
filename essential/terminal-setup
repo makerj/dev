@@ -6,9 +6,9 @@ if [ ! -e /etc/sudoers.d/$USERNAME ]; then
 	echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USERNAME
 fi
 
-# Install remote shell client/server (SSH, SFTP)
+# Install shell utilities
 if ! hash sftp; then
-	sudo apt-get install ssh -y
+	sudo apt-get install ssh tmux -y
 fi
 # Install build essentials
 if ! hash git; then
