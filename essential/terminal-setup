@@ -1,13 +1,20 @@
 #!/bin/bash
 
+# Invoke `sudo` without password for current user
 USERNAME=$(whoami)
 if [ ! -e /etc/sudoers.d/$USERNAME ]; then
 	echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USERNAME
 fi
 
-if ! hash git; then
-	sudo apt-get install git build-essential curl automake cscope -y
+# Install remote shell client/server (SSH, SFTP)
+if ! hash sftp; then
+	sudo apt-get install ssh -y
 fi
+# Install build essentials
+if ! hash git; then
+	sudo apt-get install git build-essential curl automake -y
+fi
+# Install web browser
 if ! hash lynx; then
 	sudo apt-get install lynx -y
 fi
