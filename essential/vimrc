@@ -24,12 +24,12 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'makerj/vim-transit'
 Plug 'makerj/vim-pdf'
 Plug 'makerj/vim-numbering'
-Plug 'makerj/vim-parsenumber'
+Plug 'makerj/vim-parsenumber' " Show number literal in various perspective
 Plug 'makerj/vim-cpp-enhanced-highlight'
 Plug 'makerj/felis-cat-igirisu-toast-express' " ESC to english mode for fcitx IM
-Plug 'vim-scripts/YankRing.vim'
-Plug 'makerj/tagbar'
-Plug 'hari-rangarajan/CCTree'
+Plug 'vim-scripts/YankRing.vim' " Circular clipboard
+Plug 'makerj/tagbar' " Source outline viewer (ctags required)
+Plug 'hari-rangarajan/CCTree' " C Call Tree generator/viewer (cscope required)
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
@@ -48,7 +48,7 @@ set smartindent
 set autoindent
 set autoread
 set autowriteall
-set updatetime=100
+set updatetime=60
 au CursorHold * checktime
 set noswapfile
 set cursorline
@@ -97,6 +97,19 @@ let mapleader=","
 "Shortcuts :: Plugin
 noremap <F2> :NERDTreeToggle<CR> :vertical resize 50<CR>
 noremap <F3> :TagbarToggle<CR>
+func! s:CCTreeLoad()
+    " Smart cscope database loader
+    if filereadable('cscope.xref')
+        :CCTreeLoadXRefDB cscope.xref
+    elseif filereadable('cscope.out')
+        :CCTreeLoadDB cscope.out
+        :CCTreeSaveXRefDB cscope.xref
+    else
+        let l:errmsg = 'CCTree: cscope database is not found. aborting'
+        echohl WarningMsg | echo l:errmsg  | echohl None
+    endif
+endfunc
+nnoremap <silent> <F4> :call <SID>CCTreeLoad()<CR>
 
 nnoremap <C-e> :Buffers<CR>
 nnoremap <S-e> :Files<CR>
@@ -110,7 +123,6 @@ nnoremap <leader>d :Dox<CR>
 nnoremap <leader>n :ParseNumber<CR>
 nnoremap <leader>j :CCTreeTraceForward<CR>
 nnoremap <leader>J :CCTreeTraceReverse<CR>
-nnoremap <F4> :CCTreeLoadDB<CR>
 
 "Shortcuts :: Editor
 nnoremap ; :
