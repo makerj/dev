@@ -5,7 +5,7 @@ cat .makerj
 BASE=`pwd`
 ESSENTIAL='essential'
 cd $ESSENTIAL
-./essential/ppa-setup
+./ppa-setup
 ./terminal-setup
 ./desktop-setup
 ./zsh-setup
