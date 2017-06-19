@@ -27,24 +27,33 @@ alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dis
 alias m=make
 alias fzfd='$(dirname $(fzf))'
 alias lynx='lynx -vikeys '
-alias tags='ctags -R . &; \
-            find -type f -name "*.c" -o -name "*.h" > cscope.files && cscope -b &; \
-            wait'
 source ~/.oh-my-zsh/z.sh
-export TERM="xterm-256color"    # To prevent the color scheme from crashing
-                                # when using tmux and vim at the same time
+export TERM="xterm-256color"	# To prevent the color scheme from crashing
+								# when using tmux and vim at the same time
 function gitpullall() {
-    BASE=$(pwd)
-    for PROJECT in $(find -maxdepth 2 -name ".git"); do
-        cd $(dirname $PROJECT)
-        git pull &
-        cd $BASE
-    done
-    wait
+	BASE=$(pwd)
+	for PROJECT in $(find -maxdepth 2 -name ".git"); do
+		cd $(dirname $PROJECT)
+		git pull &
+		cd $BASE
+	done
+	wait
+}
+
+function tags() {
+	EXCLUDES=""
+	if (( $# >= 1 )); then
+		# TODO Create excluding target list
+	fi
+
+	rm -f cscope.*
+	ctags -R . &
+	find $EXCLUDES -type f -name "*.c" -o -name "*.h" > cscope.files && cscope -b &
+	wait
 }
 
 # Credentials -----------------------------------------------------------------
 if [ -e ~/.zshrc-credential ]; then
-    source ~/.zshrc-credential
+	source ~/.zshrc-credential
 fi
 
