@@ -36,7 +36,10 @@ VIM8에 커스터마이징 된 단축키와 플러그인이 자동으로 설치�
 #### 키 바인딩
 공통
 - `F2` NerdTree 호출
-- `F3` TabBar 호출
+  - 디렉토리 구조를 보여줍니다
+  - git을 사용중인 디렉토리는 변경 사항 강조 또한 이루어집니다
+- `F3` TagBar 호출 (C 전용)
+  - 현재 작업 중인 소스코드의 전연 변수, 타입 선언, 함수 선언, 함수 목록을 보여줍니다
 - `F4` cscope 데이터베이스 로드.
   - 해당 디렉토리에 데이터베이스가 존재해야 합니다.
   - 태그 데이터베이스는 `tags` 터미널 명령을 입력하면 자동 생성됩니다
@@ -60,7 +63,7 @@ VIM8에 커스터마이징 된 단축키와 플러그인이 자동으로 설치�
 
 
 #### C
-자동 완성 및 소스코드 분석을 최대한 효율적으로 하기 위해 VIM8 + [YCM](https://github.com/Valloric/YouCompleteMe) + [cscope](http://cscope.sourceforge.net/)+ [universal-ctags](https://github.com/universal-ctags/ctags)으로 구성된 개발 환경을 제공합니다.
+자동 완성 및 소스코드 분석을 최대한 효율적으로 하기 위해 VIM8 + [YCM](https://github.com/Valloric/YouCompleteMe) + [cscope](http://cscope.sourceforge.net/) + [universal-ctags](https://github.com/universal-ctags/ctags)으로 구성된 개발 환경을 제공합니다.
 - 최신 플러그인들을 지원하기 위해 VIM8이 자동으로 설치됩니다
 - 자동 완성 & 자동 정정 & 호출부 이동 & 정의부 이동을 위해 clang을 통해 소스를 분석하는 YCM을 사용합니다
 - 현재 작업중인 소스코드의 아웃라인을 볼 수 있도록 universal-ctags를 사용합니다
