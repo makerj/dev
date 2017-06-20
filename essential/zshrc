@@ -14,10 +14,8 @@ export CC=$(which gcc)
 export CXX=$(which g++)
 
 # Aliases ---------------------------------------------------------------------
-alias cls=clear
 alias c=clear
 alias v=vim
-alias virtual='source env/bin/activate'
 alias h=htop
 alias q=exit
 alias gitcommit='git add -A; git commit'
@@ -25,32 +23,37 @@ alias gitreset='git reset --hard'
 alias gitclean='git reset --hard;git clean -fdx'
 alias gitstatus='git status'
 alias gitc='git add -A; git commit --amend'
-alias djtest='python3 manage.py test'
-alias djdeploy='sudo python3 deploy.py auto'
-alias djmakemigrations='python3 manage.py makemigrations'
-alias djmigrate='python3 manage.py migrate'
 alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y'
 alias m=make
 alias fzfd='$(dirname $(fzf))'
 alias lynx='lynx -vikeys '
-alias tags='ctags -R . &; \
-            find -type f -name "*.c" -o -name "*.h" > cscope.files && cscope -b &; \
-            wait'
 source ~/.oh-my-zsh/z.sh
-export TERM="xterm-256color"    # To prevent the color scheme from crashing
-                                # when using tmux and vim at the same time
+export TERM="xterm-256color"	# To prevent the color scheme from crashing
+								# when using tmux and vim at the same time
 function gitpullall() {
-    BASE=$(pwd)
-    for PROJECT in $(find -maxdepth 2 -name ".git"); do
-        cd $(dirname $PROJECT)
-        git pull &
-        cd $BASE
-    done
-    wait
+	BASE=$(pwd)
+	for PROJECT in $(find -maxdepth 2 -name ".git"); do
+		cd $(dirname $PROJECT)
+		git pull &
+		cd $BASE
+	done
+	wait
+}
+
+function tags() {
+	EXCLUDES=""
+	if (( $# >= 1 )); then
+		# TODO Create excluding target list
+	fi
+
+	rm -f cscope.*
+	ctags -R . &
+	find $EXCLUDES -type f -name "*.c" -o -name "*.h" > cscope.files && cscope -b &
+	wait
 }
 
 # Credentials -----------------------------------------------------------------
 if [ -e ~/.zshrc-credential ]; then
-    source ~/.zshrc-credential
+	source ~/.zshrc-credential
 fi
 
