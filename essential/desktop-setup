@@ -13,5 +13,12 @@ if hash X; then
 	if (( $COMPIZ_PLUGINS_EXISTS < 1 )); then
 		sudo apt-get install compizconfig-settings-manager compiz-plugins -y
 	fi
+
+	if ! hash hwpviewer; then
+		curl -O -L http://cdn.hancom.com/pds/hnc/VIE/hwpviewer_9.20.0.347_amd64.deb
+		sudo dpkg -i hwpviewer_9.20.0.347_amd64.deb
+		sudo apt-get install -f -y
+		rm -f hwpviewer_9.20.0.347_amd64.deb
+	fi
 fi
 
