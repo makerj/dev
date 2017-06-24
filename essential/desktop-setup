@@ -1,17 +1,26 @@
 #!/bin/bash
 if hash X; then
-	if [ ! -e /usr/bin/indicator-multiload ]; then
+	PACKAGE_LIST=$(dpkg --get-selections)
+
+	INDICATOR_EXISTS=$(echo $PACKAGE_LIST | grep indicator-multiload | wc -l)
+	if (( $INDICATOR_EXISTS < 1 )); then
 		sudo apt-get install indicator-multiload -y
 	fi
 
-	PAPER_THEME_EXISTS=$(apt-cache policy | grep snwh | wc -l)
+	PAPER_THEME_EXISTS=$(echo $PACKAGE_LIST | grep paper-gtk-theme | wc -l)
 	if (( $PAPER_THEME_EXISTS < 1 )); then
 		sudo apt-get install paper-icon-theme paper-gtk-theme unity-tweak-tool -y
 	fi
 
-	COMPIZ_PLUGINS_EXISTS=$(dpkg --get-selections | grep compizconfig-settings-manager | wc -l)
+	COMPIZ_PLUGINS_EXISTS=$(echo $PACKAGE_LIST | grep compizconfig-settings-manager | wc -l)
 	if (( $COMPIZ_PLUGINS_EXISTS < 1 )); then
 		sudo apt-get install compizconfig-settings-manager compiz-plugins -y
+	fi
+
+	APPORT_EXISTS=$(echo $PACKAGE_LIST | grep -P "^apport[^-]+" | wc -l)
+	if (( $APPORT_EXISTS )); then
+		# Removing annoying ubuntu internal error report popups
+		sudo apt-get purge apport -y
 	fi
 
 	if ! hash hwpviewer; then
