@@ -10,6 +10,8 @@ if hash X; then
 	PAPER_THEME_EXISTS=$(echo $PACKAGE_LIST | grep paper-gtk-theme | wc -l)
 	if (( $PAPER_THEME_EXISTS < 1 )); then
 		sudo apt-get install paper-icon-theme paper-gtk-theme unity-tweak-tool -y
+		gsettings set org.gnome.desktop.interface gtk-theme 'Paper'
+		gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 	fi
 
 	COMPIZ_PLUGINS_EXISTS=$(echo $PACKAGE_LIST | grep compizconfig-settings-manager | wc -l)
