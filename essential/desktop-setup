@@ -19,7 +19,7 @@ if hash X; then
 		sudo apt-get install compizconfig-settings-manager compiz-plugins -y
 	fi
 
-	APPORT_EXISTS=$(echo $PACKAGE_LIST | grep -P "^apport[^-]+" | wc -l)
+	APPORT_EXISTS=$(echo $PACKAGE_LIST | grep apport-gtk | wc -l)
 	if (( $APPORT_EXISTS )); then
 		# Removing annoying ubuntu internal error report popups
 		sudo apt-get purge apport -y
