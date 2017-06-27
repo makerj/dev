@@ -54,12 +54,12 @@ function tags() {
 }
 
 function vim_with_nesting_protection() {
+	VIM_NEST_FLAG=$(echo $VIM_NEST | wc --chars)
 	VIM_RUNNING=`ps | grep 'vim' | wc -l`
-	# if [[ ! -z ${VIM_NEST+x} ]] && (( $VIM_RUNNING )); then
-	if (( $VIM_RUNNING )); then
-		echo "vim sessions should be nested with care" #, set \$VIM_NEST to force"
+	if (( $VIM_NEST_FLAG < 2 )) && (( $VIM_RUNNING )); then
+		echo "vim sessions should be nested with care, set \$VIM_NEST to force"
 	else
-		zsh -c "vim $@"
+		sh -c "vim $@"
 	fi
 }
 alias v=vim_with_nesting_protection
@@ -71,3 +71,5 @@ if [ -e ~/.zshrc-credential ]; then
 	source ~/.zshrc-credential
 fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
