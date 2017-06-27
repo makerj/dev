@@ -27,6 +27,8 @@ alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dis
 alias m=make
 alias fzfd='$(dirname $(fzf))'
 alias lynx='lynx -vikeys '
+alias pnconnect='cd ~/gitrepo/rtos/tools/console && source connect'
+alias pnrun='cd ~/gitrepo/rtos/examples/echo && make run'
 source ~/.oh-my-zsh/z.sh
 export TERM="xterm-256color"	# To prevent the color scheme from crashing
 								# when using tmux and vim at the same time
