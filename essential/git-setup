@@ -11,7 +11,6 @@ if (( USER_CONFIGURED < 1 )); then
 	git config --global user.email $GIT_GLOBAL_EMAIL
 fi
 
-git config --global credential.helper cache
 git config --global help.autocorrect 1
 git config --global push.default simple
 
