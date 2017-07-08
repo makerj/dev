@@ -63,6 +63,9 @@ set bg=dark
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 "Plugin Setups -----------------------------------------------------------------
+let g:tagbar_expand = 1
+let g:tagbar_autoshowtag = 1
+
 let g:transit_src = 'ko'
 let g:transit_dst = 'en'
 
