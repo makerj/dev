@@ -73,3 +73,7 @@ fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if (( $VIMCHILD )); then
+	export PS1="(vim-shell) $PS1"
+fi
