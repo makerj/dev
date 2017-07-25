@@ -1,3 +1,5 @@
+set encoding=utf-8
+
 "Plugins ----------------------------------------------------------------------
 call plug#begin()
 Plug 'scrooloose/nerdtree',             {'on': ['NERDTreeToggle', 'NERDTreeClose']}
