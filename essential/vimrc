@@ -7,6 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator',			{'on': 'YcmGenerateConfig'}
+Plug 'uplus/vim-clang-rename'
 Plug 'morhetz/gruvbox'
 Plug 'benmills/vimux'
 Plug 'ntpeters/vim-better-whitespace'
