@@ -1,10 +1,10 @@
 #!/bin/bash
 BASE=`pwd`
-sudo echo " "
 
 # Install latest vim ----------------------------------------------------------
-VIM_PPA_EXISTS=$(apt-cache policy | grep "pi-rho" | wc -l)
-if (( $VIM_PPA_EXISTS < 1 )); then
+VIM8=$(vim --version | head -n 1 | grep "8.[0-9]" | wc -l)
+if (( ! $VIM8 )); then
+	# PPA is already preapred. @see ppa-setup
 	sudo apt-get install cmake python-dev -y
 	sudo apt-get install vim vim-nox vim-rails -y
 	if hash X; then
@@ -14,7 +14,7 @@ fi
 
 # Install utilities ------------------------------------------------------------
 if ! hash ctags; then
-	sudo apt-get install automake -y
+	sudo apt-get install automake pkg-config -y
 	git clone https://github.com/universal-ctags/ctags.git
 	cd ctags
 	./autogen.sh && ./configure && sudo make install
