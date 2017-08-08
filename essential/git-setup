@@ -4,7 +4,7 @@ if ! hash git; then
 fi
 
 USER_CONFIGURED=$(git config --global user.name | wc -l)
-if (( USER_CONFIGURED < 1 )); then
+if (( !  USER_CONFIGURED )); then
 	read -p "Enter global user.name: " GIT_GLOBAL_USERNAME
 	git config --global user.name $GIT_GLOBAL_USERNAME
 	read -p "Enter global user.email: " GIT_GLOBAL_EMAIL
@@ -16,3 +16,13 @@ git config --global push.default simple
 
 cp gitignore ~/.gitignore
 git config --global core.excludesfile '~/.gitignore'
+
+# Rebase Editor (https://www.npmjs.com/package/rebase-editor)
+# Usage: git rebase -i HEAD~10
+if hash npm; then
+	REBASEEDITOR_ENABLED=$(git config --global sequence.editor | wc -l)
+	if (( ! REBASEEDITOR_ENABLED )); then
+		sudo npm install -g rebase-editor
+		git config --global sequence.editor rebase-editor
+	fi
+fi
