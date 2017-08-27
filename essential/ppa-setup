@@ -26,5 +26,6 @@ function ppa_end() {
 ppa_start
 ppa_append snwh/pulp	# unity theme
 ppa_append pi-rho/dev	# vim8
+ppa_append ubuntu-toolchain-r/test # latest gcc and g++
 ppa_end
 
