@@ -9,6 +9,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator',			{'branch': 'develop', 'on': 'YcmGenerateConfig'}
+Plug 'artur-shaik/vim-javacomplete2'
 Plug 'uplus/vim-clang-rename',			{'do': 'sudo apt install clang && sudo ln -s /usr/bin/clang-rename-3.8 /usr/bin/clang-rename'}
 Plug 'morhetz/gruvbox'
 Plug 'benmills/vimux'
@@ -97,6 +98,9 @@ let g:move_key_modifier = 'C'
 let g:DoxygenToolkit_briefTag_pre=""
 
 let g:yankring_history_dir=expand("$HOME/.vim")
+
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
 
 "Shortcuts --------------------------------------------------------------------
 let mapleader=","
