@@ -1,4 +1,5 @@
 .ycm_extra_conf.py
+.tern-project
 GPATH
 GRTAGS
 GTAGS
