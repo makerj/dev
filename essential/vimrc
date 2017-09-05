@@ -22,6 +22,7 @@ Plug 'matze/vim-move'
 Plug 'vim-scripts/DoxygenToolkit.vim',	{'on': 'Dox'}
 "Plug 'tpope/vim-sleuth' "Indent Detctor
 Plug 'vim-scripts/Conque-GDB',          {'on': 'ConqueGdb'}
+Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'qpkorr/vim-bufkill'
@@ -98,6 +99,11 @@ let g:move_key_modifier = 'C'
 let g:DoxygenToolkit_briefTag_pre=""
 
 let g:yankring_history_dir=expand("$HOME/.vim")
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+
 
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
