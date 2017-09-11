@@ -20,3 +20,5 @@ tags
 *.swp
 .idea/
 cmake-build-debug/
+
+__pycache__/
