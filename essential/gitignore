@@ -16,6 +16,8 @@ tags
 *.ko
 *.obj
 
+*.secret
+*.pyc
 *.swp
 .idea/
 cmake-build-debug/
