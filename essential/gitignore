@@ -12,6 +12,7 @@ cscope.out
 cscope.po.out
 cscope.xref
 tags
+nohup.out
 
 *.o
 *.ko
