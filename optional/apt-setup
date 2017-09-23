@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo sed -r -i  "s/[a-z]+\.ubuntu.com/ftp.daum.net/g" /etc/apt/sources.list
