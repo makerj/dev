@@ -130,6 +130,11 @@ nnoremap <silent> <F4> :call <SID>CCTreeLoad()<CR>
 nnoremap <C-e> :Buffers<CR>
 nnoremap <S-e> :Files<CR>
 
+"Print current file path
+nnoremap <leader>p :echo @%<CR>
+"Print current file full-path
+nnoremap <leader>P :echo expand('%:p')<CR>
+
 nnoremap <leader>q :YcmCompleter GetDoc<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
 nnoremap <C-i> :YcmCompleter GoToDeclaration<CR>
