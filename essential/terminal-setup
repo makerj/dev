@@ -6,6 +6,10 @@ if [ ! -e /etc/sudoers.d/$USERNAME ]; then
 	echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USERNAME
 fi
 
+# Install web connector
+if ! hash curl; then
+	sudo apt-get install curl -y
+fi
 # Install shell utilities
 if ! hash sftp; then
 	sudo apt-get install ssh tmux htop tree -y
