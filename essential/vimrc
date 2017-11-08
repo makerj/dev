@@ -137,6 +137,7 @@ nnoremap <leader>P :echo expand('%:p')<CR>
 
 nnoremap <leader>q :YcmCompleter GetDoc<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
+nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <C-i> :YcmCompleter GoToDeclaration<CR>
 nnoremap <C-o> <C-o>zz
 
@@ -162,7 +163,6 @@ nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
 nnoremap <BS> hx
 inoremap <C-w> <C-o>de
 inoremap <C-b> <C-o>db
-nnoremap <leader>t :TransItSwapLang<CR>
 vnoremap t :TransItBlock<CR>
 vnoremap T :TransItBlockPut<CR>
 nnoremap <Space> <C-w>w
