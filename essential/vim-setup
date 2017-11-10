@@ -46,3 +46,4 @@ if ! hash ag; then
 	sudo apt-get install silversearcher-ag -y
 fi
 
+sudo apt-get install -qq libc++-dev -y
