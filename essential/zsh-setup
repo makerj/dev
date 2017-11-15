@@ -5,19 +5,9 @@ if ! hash zsh; then
 	sudo apt-get install zsh -y
 	chsh -s /usr/bin/zsh
 fi
-if [ ! -e ~/.oh-my-zsh ]; then
-	curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+if [ ! -e ~/antigen.zsh ]; then
+	curl -L git.io/antigen > ~/antigen.zsh
 fi
-if [ ! -e ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
-	git clone git://github.com/zsh-users/zsh-autosuggestions \
-		${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-fi
-if [ ! -e ~/.oh-my-zsh/z.sh ]; then
-	curl -O -L https://raw.githubusercontent.com/rupa/z/master/z.sh
-	mv z.sh ~/.oh-my-zsh/z.sh
-fi
-
-cp zshrc ~/.zshrc
 
 if [ ! -e ~/.zshrc-credential ]; then
 	read -p "Enter Google Cloud API Key: " GOOGLE_CLOUD_API_KEY
@@ -25,3 +15,5 @@ if [ ! -e ~/.zshrc-credential ]; then
 		echo "export GOOGLE_CLOUD_API_KEY=$GOOGLE_CLOUD_API_KEY" >> ~/.zshrc-credential
 	fi
 fi
+
+cp zshrc ~/.zshrc
