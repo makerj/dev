@@ -35,6 +35,7 @@ flags = [
     '-x', 'c++',
     '-std=c++14',
     '-stdlib=libc++',
+    '-Wno-write-strings',
     #'-DSOMETHING=123',
     '-I.',
 ]
