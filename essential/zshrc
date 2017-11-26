@@ -1,3 +1,6 @@
+# setup fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # antigen installation. -------------------------------------------------------
 source ~/antigen.zsh
 antigen use oh-my-zsh
@@ -14,10 +17,6 @@ antigen bundle uvaes/fzf-marks
 
 antigen apply
 
-# Build flags -----------------------------------------------------------------
-export CC=$(which gcc)
-export CXX=$(which g++)
-
 # Aliases ---------------------------------------------------------------------
 alias c=clear
 alias h=htop
@@ -28,11 +27,7 @@ alias gitclean='git reset --hard;git clean -fdx'
 alias gitstatus='git status'
 alias gitc='git add -A; git commit --amend'
 alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y'
-alias m=make
-alias fzfd='$(dirname $(fzf))'
 alias lynx='lynx -vikeys '
-alias pnconnect='cd ~/gitrepo/rtos/tools/console && source connect'
-alias pnrun='cd ~/gitrepo/rtos/examples/echo && make run'
 export TERM="xterm-256color"	# To prevent the color scheme from crashing
 								# when using tmux and vim at the same time
 function gitpullall() {
@@ -76,9 +71,6 @@ alias vim=vim_with_nesting_protection
 if [ -e ~/.zshrc-credential ]; then
 	source ~/.zshrc-credential
 fi
-
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if (( $VIMCHILD )); then
 	export PS1="(vim-shell) $PS1"
