@@ -7,6 +7,11 @@ if hash X; then
 		sudo apt-get install indicator-multiload -y
 	fi
 
+	UNITY_TWEAK_TOOL_EXISTS=$(echo $PACKAGE_LIST | grep unity-tweak-tool | wc -l)
+	if (( $UNITY_TWEAK_TOOL_EXISTS < 1 )); then
+		sudo apt-get install unity-tweak-tool -y
+	fi
+
 	PAPER_THEME_EXISTS=$(echo $PACKAGE_LIST | grep paper-gtk-theme | wc -l)
 	if (( $PAPER_THEME_EXISTS < 1 )); then
 		sudo apt-get install paper-icon-theme paper-gtk-theme unity-tweak-tool -y
