@@ -21,6 +21,7 @@ nohup.out
 *.secret
 *.pyc
 *.swp
+*.iml
 .idea/
 cmake-build-debug/
 
