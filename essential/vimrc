@@ -35,6 +35,9 @@ Plug 'makerj/felis-cat-igirisu-toast-express' " ESC to english mode for fcitx IM
 Plug 'vim-scripts/YankRing.vim' " Circular clipboard
 Plug 'makerj/tagbar' " Source outline viewer (ctags required)
 Plug 'hari-rangarajan/CCTree' " C Call Tree generator/viewer (cscope required)
+Plug 'mrk21/yaml-vim'
+Plug 'lmeijvogel/vim-yaml-helper'
+
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
@@ -104,6 +107,7 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
+let g:vim_yaml_helper#auto_display_path = 1
 
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
