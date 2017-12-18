@@ -4,36 +4,36 @@ if hash X; then
 
 	INDICATOR_EXISTS=$(echo $PACKAGE_LIST | grep indicator-multiload | wc -l)
 	if (( $INDICATOR_EXISTS < 1 )); then
-		sudo apt-get install indicator-multiload -y
+		sudo apt install indicator-multiload -y
 	fi
 
 	UNITY_TWEAK_TOOL_EXISTS=$(echo $PACKAGE_LIST | grep unity-tweak-tool | wc -l)
 	if (( $UNITY_TWEAK_TOOL_EXISTS < 1 )); then
-		sudo apt-get install unity-tweak-tool -y
+		sudo apt install unity-tweak-tool -y
 	fi
 
 	PAPER_THEME_EXISTS=$(echo $PACKAGE_LIST | grep paper-gtk-theme | wc -l)
 	if (( $PAPER_THEME_EXISTS < 1 )); then
-		sudo apt-get install paper-icon-theme paper-gtk-theme unity-tweak-tool -y
+		sudo apt install paper-icon-theme paper-gtk-theme unity-tweak-tool -y
 		gsettings set org.gnome.desktop.interface gtk-theme 'Paper'
 		gsettings set org.gnome.desktop.interface icon-theme 'Paper'
 	fi
 
 	COMPIZ_PLUGINS_EXISTS=$(echo $PACKAGE_LIST | grep compizconfig-settings-manager | wc -l)
 	if (( $COMPIZ_PLUGINS_EXISTS < 1 )); then
-		sudo apt-get install compizconfig-settings-manager compiz-plugins -y
+		sudo apt install compizconfig-settings-manager compiz-plugins -y
 	fi
 
 	APPORT_EXISTS=$(echo $PACKAGE_LIST | grep apport-gtk | wc -l)
 	if (( $APPORT_EXISTS )); then
 		# Removing annoying ubuntu internal error report popups
-		sudo apt-get purge apport -y
+		sudo apt purge apport -y
 	fi
 
 	if ! hash hwpviewer; then
 		curl -O -L http://cdn.hancom.com/pds/hnc/VIE/hwpviewer_9.20.0.347_amd64.deb
 		sudo dpkg -i hwpviewer_9.20.0.347_amd64.deb
-		sudo apt-get install -f -y
+		sudo apt install -f -y
 		rm -f hwpviewer_9.20.0.347_amd64.deb
 	fi
 fi

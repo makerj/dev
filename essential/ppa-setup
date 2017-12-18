@@ -19,7 +19,7 @@ function ppa_append() {
 
 function ppa_end() {
 	if (( $UPDATE_RERUIED )); then
-		sudo apt-get update
+		sudo apt update
 	fi
 }
 

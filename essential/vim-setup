@@ -5,23 +5,23 @@ BASE=`pwd`
 VIM8=$(vim --version | head -n 1 | grep "8.[0-9]" | wc -l)
 if (( ! $VIM8 )); then
 	# PPA is already preapred. @see ppa-setup
-	sudo apt-get install cmake python-dev -y
-	sudo apt-get install vim vim-nox vim-rails -y
+	sudo apt install cmake python-dev -y
+	sudo apt install vim vim-nox vim-rails -y
 	if hash X; then
-		sudo apt-get install vim-gnome -y # For clipboard sharing
+		sudo apt install vim-gnome -y # For clipboard sharing
 	fi
 fi
 
 # Install utilities ------------------------------------------------------------
 if ! hash ctags; then
-	sudo apt-get install automake pkg-config -y
+	sudo apt install automake pkg-config -y
 	git clone https://github.com/universal-ctags/ctags.git
 	cd ctags
 	./autogen.sh && ./configure && sudo make install
 	cd $BASE && rm -rf ctags
 fi
 if ! hash cscope; then
-	sudo apt-get install cscope -y
+	sudo apt install cscope -y
 fi
 
 # Install Plugin Manager ------------------------------------------------------
@@ -43,7 +43,7 @@ cp ycm_extra_conf.py ~/.vim/
 
 # Install Plugins :: fzf.vim :: Ag
 if ! hash ag; then
-	sudo apt-get install silversearcher-ag -y
+	sudo apt install silversearcher-ag -y
 fi
 
-sudo apt-get install -qq libc++-dev -y
+sudo apt install -qq libc++-dev -y

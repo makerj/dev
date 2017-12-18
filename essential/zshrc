@@ -26,7 +26,7 @@ alias gitreset='git reset --hard'
 alias gitclean='git reset --hard;git clean -fdx'
 alias gitstatus='git status'
 alias gitc='git add -A; git commit --amend'
-alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean -y'
+alias update='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y'
 alias lynx='lynx -vikeys '
 export TERM="xterm-256color"	# To prevent the color scheme from crashing
 								# when using tmux and vim at the same time

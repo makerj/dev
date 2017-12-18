@@ -1,6 +1,6 @@
 #!/bin/bash
 if ! hash git; then
-	sudo apt-get install git tig -y
+	sudo apt install git tig -y
 fi
 
 USER_CONFIGURED=$(git config --global user.name | wc -l)

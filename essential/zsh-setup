@@ -2,7 +2,7 @@
 
 # zsh ---------------------------------------------------------------------------------------------
 if ! hash zsh; then
-	sudo apt-get install zsh -y
+	sudo apt install zsh -y
 	chsh -s /usr/bin/zsh
 fi
 if [ ! -e ~/antigen.zsh ]; then
