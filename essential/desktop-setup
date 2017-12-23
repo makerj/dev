@@ -30,12 +30,5 @@ if hash X; then
 		# Removing annoying ubuntu internal error report popups
 		sudo apt purge apport -y
 	fi
-
-	if ! hash hwpviewer; then
-		curl -O -L http://cdn.hancom.com/pds/hnc/VIE/hwpviewer_9.20.0.347_amd64.deb
-		sudo dpkg -i hwpviewer_9.20.0.347_amd64.deb
-		sudo apt install -f -y
-		rm -f hwpviewer_9.20.0.347_amd64.deb
-	fi
 fi
 
