@@ -22,3 +22,5 @@ fi
 if ! hash lynx; then
 	sudo apt install lynx -y
 fi
+
+cp tmux.conf $HOME/.tmux.conf
