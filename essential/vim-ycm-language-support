@@ -15,10 +15,10 @@ if [[ ! -e $YCM_LANG_CONFIG ]]; then
 fi
 
 # Javascript Support ----------------------------------------------------------
-if [[ -e /usr/local/nodejs/bin/node ]]; then
-	TERN_EXISTS=$(grep 'tern' $YCM_LANG_CONFIG | wc -l)
+if hash tern; then
+	TERN_EXISTS=$(grep 'js' $YCM_LANG_CONFIG | wc -l)
 	if (( ! $TERN_EXISTS )); then
-		echo "--tern-completer" >> $YCM_LANG_CONFIG
+		echo "--js-completer" >> $YCM_LANG_CONFIG
 		INSTALL_REQUIRED=1
 	fi
 fi
