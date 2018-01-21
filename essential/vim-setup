@@ -40,6 +40,7 @@ vim +PlugUpdate +qall
 export YCM_BASE="$PLUGIN_BASE/YouCompleteMe"
 ./vim-ycm-language-support
 cp ycm_extra_conf.py ~/.vim/
+cp tern-config ~/.tern-config
 
 # Install Plugins :: fzf.vim :: Ag
 if ! hash ag; then
