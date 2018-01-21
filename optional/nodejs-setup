@@ -1,23 +1,5 @@
 #!/bin/bash
-USER=$(whoami)
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt install -y nodejs
 
-NODE_VERSION="v8.9.0"
-NODE_PACK="node-$NODE_VERSION-linux-x64"
-NPM="/usr/local/nodejs/bin/npm"
-
-if ! hash node; then
-  curl -o nodejs.tar.xz "https://nodejs.org/dist/$NODE_VERSION/$NODE_PACK.tar.xz"
-  tar xf nodejs.tar.xz && rm nodejs.tar.xz
-  sudo mkdir -p /usr/local/nodejs
-  sudo mv $NODE_PACK/* /usr/local/nodejs && rm -rf $NODE_PACK
-  sudo chown -R $USER:$USER /usr/local/nodejs
-  echo "export PATH=\$PATH:/usr/local/nodejs/bin" >> ~/.profile
-  echo "Logout is required to install typescript"
-  exit
-fi
-
-TYPESCRIPT_EXISTS=$($NPM -g ls | grep typescript | wc -l)
-if (( $TYPESCRIPT_EXISTS < 1 )); then
-  $NPM install -g typescript
-fi
-
+sudo npm i -g tern
