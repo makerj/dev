@@ -97,7 +97,9 @@ let g:ConqueGdb_Leader = '\'
 "
 let g:airline#extensions#tabline#enabled = 1
 
-let g:UltiSnipsExpandTrigger="<C-right>"
+let g:UltiSnipsExpandTrigger="<C-j>"
+let g:UltiSnipsJumpForwardTrigger="<C-l>"
+let g:UltiSnipsJumpBackwardTrigger="<C-h>"
 
 let g:move_key_modifier = 'C'
 
