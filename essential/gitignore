@@ -25,4 +25,8 @@ nohup.out
 .idea/
 cmake-build-debug/
 
+.classpath
+.project
+.settings/
+
 __pycache__/
