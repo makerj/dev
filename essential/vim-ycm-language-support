@@ -14,6 +14,15 @@ if [[ ! -e $YCM_LANG_CONFIG ]]; then
 	INSTALL_REQUIRED=1
 fi
 
+# Java Support ----------------------------------------------------------------
+if hash javac; then
+	TERN_EXISTS=$(grep 'js' $YCM_LANG_CONFIG | wc -l)
+	if (( ! $TERN_EXISTS )); then
+		echo "--java-completer" >> $YCM_LANG_CONFIG
+		INSTALL_REQUIRED=1
+	fi
+fi
+
 # Javascript Support ----------------------------------------------------------
 if hash tern; then
 	TERN_EXISTS=$(grep 'js' $YCM_LANG_CONFIG | wc -l)
