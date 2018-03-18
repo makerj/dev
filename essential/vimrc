@@ -134,7 +134,6 @@ func! s:CCTreeLoad()
 endfunc
 nnoremap <silent> <F4> :call <SID>CCTreeLoad()<CR>
 
-nnoremap <C-e> :Buffers<CR>
 nnoremap <S-e> :Files<CR>
 
 "Print current file path
