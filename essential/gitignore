@@ -6,6 +6,7 @@ GTAGS
 GSYMS
 TAGS
 compile_commands.json
+.hgignore
 
 cscope.files
 cscope.out
