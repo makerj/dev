@@ -36,6 +36,7 @@ Plug 'makerj/tagbar' " Source outline viewer (ctags required)
 Plug 'hari-rangarajan/CCTree' " C Call Tree generator/viewer (cscope required)
 Plug 'mrk21/yaml-vim'
 Plug 'lmeijvogel/vim-yaml-helper'
+Plug 'othree/eregex.vim' " replace vim search pattern to perl regex
 
 call plug#end()
 
