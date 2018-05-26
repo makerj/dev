@@ -56,6 +56,27 @@ function tags() {
 	wait
 }
 
+function gituser() {
+	if (( $# < 1 )); then
+		echo "Usage: gituser (junhui|makerj)"
+	else
+		if [[ "$1" == "junhui" ]]; then
+			echo "Change Git User to 'junhui'"
+			git config --global user.name "junhui"
+			git config --global user.email "junhui@gurum.cc"
+		elif [[ "$1" == "makerj" ]]; then
+			echo "Change Git User to 'makerj'"
+			git config --global user.name "makerj"
+			git config --global user.email "ohenwkgdj@gmail.com"
+		else
+			echo "Unsupported Git username: $1"
+		fi
+	fi
+
+	echo "- Current Git name:  $(git config --global user.name)"
+	echo "- Current Git email: $(git config --global user.email)"
+}
+
 function vim_with_nesting_protection() {
 	VIM_NEST_FLAG=$(echo $VIM_NEST | wc --chars)
 	VIM_RUNNING=`ps | grep 'vim' | wc -l`
