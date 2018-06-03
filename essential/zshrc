@@ -19,6 +19,7 @@ antigen apply
 
 # Aliases ---------------------------------------------------------------------
 alias c=clear
+alias t=tmux
 alias h=htop
 alias q=exit
 alias cmakebuild='(mkdir -p build; cd build; conan install .. --build missing; cmake .. && cmake --build . -- VERBOSE=1)'
