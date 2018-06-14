@@ -113,8 +113,9 @@ let g:javascript_plugin_flow = 1
 
 let g:vim_yaml_helper#auto_display_path = 1
 
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
+autocmd FileType c setlocal commentstring=//\ %s
+autocmd FileType cpp setlocal commentstring=//\ %s
+autocmd FileType cmake setlocal commentstring=#\ %s
 
 "Shortcuts --------------------------------------------------------------------
 let mapleader=","
