@@ -22,7 +22,7 @@ alias c=clear
 alias t=tmux
 alias h=htop
 alias q=exit
-alias cmakebuild='(mkdir -p build; cd build; conan install .. --build missing; cmake .. && cmake --build . -- VERBOSE=1)'
+alias cmakebuild='(mkdir -p build; cd build; conan install --update .. --build missing; cmake .. && cmake --build . -- VERBOSE=1)'
 alias gitcommit='git add -A; git commit'
 alias gitreset='git reset --hard'
 alias gitclean='git reset --hard;git clean -fdx'
