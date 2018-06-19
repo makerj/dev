@@ -22,7 +22,6 @@ alias c=clear
 alias t=tmux
 alias h=htop
 alias q=exit
-alias cmakebuild='(mkdir -p build; cd build; conan install --update .. --build missing; cmake .. && cmake --build . -- VERBOSE=1)'
 alias gitcommit='git add -A; git commit'
 alias gitreset='git reset --hard'
 alias gitclean='git reset --hard;git clean -fdx'
@@ -33,6 +32,12 @@ alias update='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y
 alias lynx='lynx -vikeys '
 export TERM="xterm-256color"	# To prevent the color scheme from crashing
 								# when using tmux and vim at the same time
+
+function cmakebuild() {
+	(mkdir -p build && cd build && conan install --update .. --build missing)
+	(cd build && cmake .. && cmake --build . -- VERBOSE=1 -j$(nproc) $@)
+}
+
 function gitpullall() {
 	BASE=$(pwd)
 	for PROJECT in $(find -maxdepth 2 -name ".git"); do
