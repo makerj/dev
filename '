@@ -37,7 +37,7 @@ Plug 'mrk21/yaml-vim'
 Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'othree/eregex.vim' " replace vim search pattern to perl regex
 Plug 'pboettch/vim-cmake-syntax'
-Plug 'vim-scripts/VisIncr' " increase/decrease number, date
+Plug 'vim-scripts/VisIncr' "increase/decrease number, datehelper
 
 call plug#end()
 
