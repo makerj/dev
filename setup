@@ -4,11 +4,26 @@ cat .makerj
 
 BASE=`pwd`
 ESSENTIAL='essential'
-cd $ESSENTIAL
-./ppa-setup
-./terminal-setup
-./desktop-setup
-./zsh-setup
-./git-setup
-./vim-setup
-cd $BASE
+
+if grep -q "16.04" /etc/issue ; then
+	cd $ESSENTIAL
+	./ppa-setup
+	./terminal-setup
+	./desktop-setup
+	./zsh-setup
+	./git-setup
+	./vim-setup
+	cd $BASE
+elif grep -q "18.04" /etc/issue ; then
+	cd $ESSENTIAL
+	./terminal-setup
+	./zsh-setup
+	./git-setup
+	./vim-setup
+	cd $BASE
+else
+	echo "Unsupported platform"
+	cat /etc/issue
+	exit 1;
+fi
+
