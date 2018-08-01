@@ -4,11 +4,11 @@ set encoding=utf-8
 call plug#begin()
 Plug 'scrooloose/nerdtree',             {'on': ['NERDTreeToggle', 'NERDTreeClose']}
 Plug 'Xuyuanp/nerdtree-git-plugin',     {'on': 'NERDTreeToggle'}
-Plug 'junegunn/fzf',					{'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf',                    {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator',			{'branch': 'develop', 'on': 'YcmGenerateConfig'}
+Plug 'rdnetto/YCM-Generator',           {'branch': 'develop', 'on': 'YcmGenerateConfig'}
 Plug 'morhetz/gruvbox'
 Plug 'benmills/vimux'
 Plug 'ntpeters/vim-better-whitespace'
@@ -17,7 +17,7 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'matze/vim-move'
-Plug 'vim-scripts/DoxygenToolkit.vim',	{'on': 'Dox'}
+Plug 'vim-scripts/DoxygenToolkit.vim',    {'on': 'Dox'}
 "Plug 'tpope/vim-sleuth' "Indent Detctor
 Plug 'vim-scripts/Conque-GDB',          {'on': 'ConqueGdb'}
 Plug 'pangloss/vim-javascript'
@@ -137,19 +137,27 @@ func! s:CCTreeLoad()
 endfunc
 nnoremap <silent> <F4> :call <SID>CCTreeLoad()<CR>
 
-func! s:SmartBuild()
+func! s:SmartBuild(use_input)
     " Build System aware building
     :wa
+
+    if ! a:use_input
+        let l:target = ''
+    else
+        let l:target = input('Build Target: ')
+    endif
+
     if filereadable('CMakeLists.txt')
-        :!mkdir -p build && cd build && conan install .. --build missing ; cmake .. && cmake --build . -- -j8
+        :execute "!mkdir -p build && cd build && conan install .. --build missing ; cmake .. && cmake --build . -- -j8 ".l:target
     elseif filereadable('Makefile')
-        :!make
+        :execute "!make ".l:target
     else
         let l:errmsg = 'build script is not found. aborting'
         echohl WarningMsg | echo l:errmsg  | echohl None
     endif
 endfunc
-nnoremap <silent> <F10> :call <SID>SmartBuild()<CR>
+nnoremap <silent> <F10> :call <SID>SmartBuild(0)<CR>
+nnoremap <silent> <C-F10> :call <SID>SmartBuild(1)<CR>
 
 nnoremap <S-e> :Files<CR>
 
@@ -194,5 +202,4 @@ nnoremap <C-l> :Lines<CR>
 
 "Shortcuts :: External Utilties
 nnoremap <F9> :!export VIMCHILD=1 && $SHELL<CR>
-nnoremap <C-F10> :wa<CR><ESC>:!make test<CR>
 
