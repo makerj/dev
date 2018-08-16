@@ -6,24 +6,20 @@ BASE=`pwd`
 ESSENTIAL='essential'
 
 if grep -q "16.04" /etc/issue ; then
-	cd $ESSENTIAL
-	./ppa-setup
-	./terminal-setup
-	./desktop-setup
-	./zsh-setup
-	./git-setup
-	./vim-setup
-	cd $BASE
+	export UBUNTU_18_04=0
 elif grep -q "18.04" /etc/issue ; then
-	cd $ESSENTIAL
-	./terminal-setup
-	./zsh-setup
-	./git-setup
-	./vim-setup
-	cd $BASE
+	export UBUNTU_18_04=1
 else
 	echo "Unsupported platform"
 	cat /etc/issue
 	exit 1;
 fi
 
+cd $ESSENTIAL
+./ppa-setup
+./terminal-setup
+./desktop-setup
+./zsh-setup
+./git-setup
+./vim-setup
+cd $BASE

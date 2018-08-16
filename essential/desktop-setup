@@ -7,17 +7,23 @@ if hash X; then
 		sudo apt install indicator-multiload -y
 	fi
 
+	if (( $UBUNTU_18_04 )); then
+		sudo apt install ubuntu-unity-desktop -y
+	fi
+
 	UNITY_TWEAK_TOOL_EXISTS=$(echo $PACKAGE_LIST | grep unity-tweak-tool | wc -l)
 	if (( $UNITY_TWEAK_TOOL_EXISTS < 1 )); then
 		sudo apt install unity-tweak-tool -y
 	fi
 
-	PAPER_THEME_EXISTS=$(echo $PACKAGE_LIST | grep paper-gtk-theme | wc -l)
-	if (( $PAPER_THEME_EXISTS < 1 )); then
-		sudo apt update
-		sudo apt install paper-icon-theme paper-gtk-theme -y
-		gsettings set org.gnome.desktop.interface gtk-theme 'Paper'
-		gsettings set org.gnome.desktop.interface icon-theme 'Paper'
+	if (( $UBUNTU_18_04 < 1 )); then
+		PAPER_THEME_EXISTS=$(echo $PACKAGE_LIST | grep paper-gtk-theme | wc -l)
+		if (( $PAPER_THEME_EXISTS < 1 )); then
+			sudo apt update
+			sudo apt install paper-icon-theme paper-gtk-theme -y
+			gsettings set org.gnome.desktop.interface gtk-theme 'Paper'
+			gsettings set org.gnome.desktop.interface icon-theme 'Paper'
+		fi
 	fi
 
 	COMPIZ_PLUGINS_EXISTS=$(echo $PACKAGE_LIST | grep compizconfig-settings-manager | wc -l)
