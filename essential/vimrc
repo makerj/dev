@@ -164,6 +164,19 @@ endfunc
 nnoremap <silent> <F10> :call <SID>SmartBuild(0)<CR>
 nnoremap <silent> <C-F10> :call <SID>SmartBuild(1)<CR>
 
+func! s:SearchAndReplace()
+    " Search And Replace recursively
+    :wa
+
+	let l:basedir = input('Base Directory: ')
+	let l:sfrom = input('String From: ')
+	let l:sto = input('String To: ')
+
+	:execute 'args '.l:basedir.'**/*.{c,h}'
+	:execute 'argdo %s/'.l:sfrom.'/'.l:sto.'/gc'
+endfunc
+nnoremap <leader>r :call <SID>SearchAndReplace()<CR>
+
 nnoremap <S-e> :Files<CR>
 
 "Print current file path
@@ -181,8 +194,6 @@ nnoremap <leader>d :Dox<CR>
 nnoremap <leader>n :ParseNumber<CR>
 nnoremap <leader>j :CCTreeTraceForward<CR>
 nnoremap <leader>J :CCTreeTraceReverse<CR>
-
-nnoremap <leader>r :ClangRenameCurrent<CR>
 
 
 "Shortcuts :: Editor
