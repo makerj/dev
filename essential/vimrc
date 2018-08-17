@@ -177,6 +177,19 @@ func! s:SearchAndReplace()
 endfunc
 nnoremap <leader>r :call <SID>SearchAndReplace()<CR>
 
+func! s:KillAllBuffer()
+    " Kill all opened buffers
+    :wa
+
+	let l:index = 0
+	let l:buffer_count = len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
+	while l:index < l:buffer_count
+		:BD
+		let l:index += 1
+	endwhile
+endfunc
+nnoremap <leader>Z :call <SID>KillAllBuffer()<CR>
+
 nnoremap <S-e> :Files<CR>
 
 "Print current file path
