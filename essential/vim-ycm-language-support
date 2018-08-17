@@ -16,8 +16,8 @@ fi
 
 # Java Support ----------------------------------------------------------------
 if hash javac; then
-	TERN_EXISTS=$(grep 'js' $YCM_LANG_CONFIG | wc -l)
-	if (( ! $TERN_EXISTS )); then
+	LS_EXISTS=$(grep 'java' $YCM_LANG_CONFIG | wc -l)
+	if (( ! $LS_EXISTS )); then
 		echo "--java-completer" >> $YCM_LANG_CONFIG
 		INSTALL_REQUIRED=1
 	fi
