@@ -1,5 +1,8 @@
 set encoding=utf-8
 
+"Export Environment variables -------------------------------------------------
+let $FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
 "Plugins ----------------------------------------------------------------------
 call plug#begin()
 Plug 'scrooloose/nerdtree',             {'on': ['NERDTreeToggle', 'NERDTreeClose']}
