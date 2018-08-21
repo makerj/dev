@@ -56,8 +56,9 @@ function tags() {
 		done
 	fi
 
+	rm -f tags
 	rm -f cscope.*
-	ctags -R . &
+	ctags --exclude="*.java" -R . &
 	find $EXCLUDES -type f -name "*.c" -o -name "*.h" > cscope.files && cscope -b &
 	wait
 }
