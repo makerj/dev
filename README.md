@@ -41,9 +41,6 @@ VIM8에 커스터마이징 된 단축키와 플러그인이 자동으로 설치�
 - `F3` TagBar 호출
   - 현재 작업 중인 소스코드의 전역 변수, 타입 선언, 함수 선언, 함수 목록을 보여줍니다
   - 최적화된 플러그인이 아니라서 랙을 유발합니다. 1000줄 이상의 파일 작업시엔 필요할때만 켜주세요.
-- `F4` cscope 데이터베이스 로드. (C 전용)
-  - 해당 디렉토리에 데이터베이스가 존재해야 합니다.
-  - 태그 데이터베이스는 `tags` 터미널 명령을 입력하면 자동 생성됩니다
 - `F7` 맞춤법 검사기 토글
 - `F8` Tab을 8스페이스로 취급 (기본값은 4 스페이스)
 - `F9` shell 호출. 호출된 shell에서 `exit`을 입력하면 vim으로 돌아옵니다
@@ -72,12 +69,11 @@ VIM8에 커스터마이징 된 단축키와 플러그인이 자동으로 설치�
 
 
 #### C
-자동 완성 및 소스코드 분석을 최대한 효율적으로 하기 위해 VIM8 + [YCM](https://github.com/Valloric/YouCompleteMe) + [cscope](http://cscope.sourceforge.net/) + [universal-ctags](https://github.com/universal-ctags/ctags)으로 구성된 개발 환경을 제공합니다.
+자동 완성 및 소스코드 분석을 최대한 효율적으로 하기 위해 VIM8 + [YCM](https://github.com/Valloric/YouCompleteMe) + [universal-ctags](https://github.com/universal-ctags/ctags)으로 구성된 개발 환경을 제공합니다.
 - 최신 플러그인들을 지원하기 위해 VIM8이 자동으로 설치됩니다
 - 자동 완성 & 자동 정정 & 호출부 이동 & 정의부 이동을 위해 clang을 통해 소스를 분석하는 YCM을 사용합니다
 - 현재 작업중인 소스코드의 아웃라인을 볼 수 있도록 universal-ctags를 사용합니다
-- 소스코드의 Call Graph를 볼 수 있도록 cscope + CCTree vim plugin을 사용합니다
-- ctags와 cscope를 위한 태그 데이터베이스는 프로젝트의 루트 디렉토리에서 터미널 명령 `tags`를 입력하면 자동으로 구축됩니다
+- ctags를 위한 태그 데이터베이스는 프로젝트의 루트 디렉토리에서 터미널 명령 `tags`를 입력하면 자동으로 구축됩니다
 - 빠른 문서화를 위해 doxygen 주석 자동 생성을 지원합니다
 
 

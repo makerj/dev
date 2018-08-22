@@ -35,7 +35,6 @@ Plug 'makerj/vim-cpp-enhanced-highlight'
 Plug 'makerj/felis-cat-igirisu-toast-express' " ESC to english mode for fcitx IM
 Plug 'vim-scripts/YankRing.vim' " Circular clipboard
 Plug 'makerj/tagbar' " Source outline viewer (ctags required)
-Plug 'hari-rangarajan/CCTree' " C Call Tree generator/viewer (cscope required)
 Plug 'mrk21/yaml-vim'
 Plug 'lmeijvogel/vim-yaml-helper'
 Plug 'othree/eregex.vim' " replace vim search pattern to perl regex
@@ -128,19 +127,6 @@ let mapleader=","
 "Shortcuts :: Plugin
 noremap <F2> :NERDTreeToggle<CR> :vertical resize 45<CR>
 noremap <F3> :TagbarToggle<CR>
-func! s:CCTreeLoad()
-    " Smart cscope database loader
-    if filereadable('cscope.xref')
-        :CCTreeLoadXRefDB cscope.xref
-    elseif filereadable('cscope.out')
-        :CCTreeLoadDB cscope.out
-        :CCTreeSaveXRefDB cscope.xref
-    else
-        let l:errmsg = 'CCTree: cscope database is not found. aborting'
-        echohl WarningMsg | echo l:errmsg  | echohl None
-    endif
-endfunc
-nnoremap <silent> <F4> :call <SID>CCTreeLoad()<CR>
 
 func! s:SmartBuild(use_input)
     " Build System aware building

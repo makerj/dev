@@ -20,9 +20,6 @@ if ! hash ctags; then
 	./autogen.sh && ./configure && sudo make install
 	cd $BASE && rm -rf ctags
 fi
-if ! hash cscope; then
-	sudo apt install cscope -y
-fi
 
 # Install Plugin Manager ------------------------------------------------------
 if [ ! -e ~/.vim/autoload/plug.vim ]; then

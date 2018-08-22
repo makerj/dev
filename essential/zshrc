@@ -49,18 +49,8 @@ function gitpullall() {
 }
 
 function tags() {
-	EXCLUDES=""
-	if (( $# >= 1 )); then
-		for ARG in "$@"; do
-			EXCLUDES="$EXCLUDES -not -name $ARG"
-		done
-	fi
-
 	rm -f tags
-	rm -f cscope.*
-	ctags --exclude="*.java" -R . &
-	find $EXCLUDES -type f -name "*.c" -o -name "*.h" > cscope.files && cscope -b &
-	wait
+	ctags --exclude="*.java" -R .
 }
 
 function gituser() {
