@@ -83,6 +83,33 @@ function vim_with_nesting_protection() {
 		sh -c "vim $@"
 	fi
 }
+
+function wifi-scan() {
+	sudo iwlist scanning
+}
+
+function wifi-connect() {
+	echo -n "WIFI NIC Name: "; read WIFI_NIC
+	echo -n "WIFI Name:     "; read WIFI_NAME
+	echo -n "WIFI Pass:     "; read -s WIFI_PASS
+
+	sudo ifconfig "${WIFI_NIC}" 0 down; sleep 0.5
+	sudo ifconfig "${WIFI_NIC}" up; sleep 0.5
+
+	WIFI_CONFIG="/tmp/${RANDOM}${RANDOM}${RANDOM}${RANDOM}.wifi.conf"
+	touch "$WIFI_CONFIG"
+	chmod 0600 "$WIFI_CONFIG"
+	echo "network={" >> "$WIFI_CONFIG"
+	echo "    ssid=\"${WIFI_NAME}\"" >> "$WIFI_CONFIG"
+	echo "    psk=\"${WIFI_PASS}\"" >> "$WIFI_CONFIG"
+	echo "}" >> "$WIFI_CONFIG"
+
+	sudo wpa_supplicant -B -i"${WIFI_NIC}" -c"${WIFI_CONFIG}" -Dwext
+	rm -f "$WIFI_CONFIG"
+
+	sudo dhclient "${WIFI_NIC}"
+}
+
 alias v=vim_with_nesting_protection
 alias vi=vim_with_nesting_protection
 alias vim=vim_with_nesting_protection
