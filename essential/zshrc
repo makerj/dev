@@ -110,6 +110,12 @@ function wifi-connect() {
 	sudo dhclient "${WIFI_NIC}"
 }
 
+function perf-svg() {
+	SVG_DATA_PATH="/tmp/perf.svgdata.${RANDOM}${RANDOM}${RANDOM}"
+	sudo perf script -f | ~/FlameGraph/stackcollapse-perf.pl > "$SVG_DATA_PATH"
+	~/.FlameGraph/flamegraph.pl "$SVG_DATA_PATH" > perf.svg
+}
+
 alias v=vim_with_nesting_protection
 alias vi=vim_with_nesting_protection
 alias vim=vim_with_nesting_protection

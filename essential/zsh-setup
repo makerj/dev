@@ -16,4 +16,8 @@ if [ ! -e ~/.zshrc-credential ]; then
 	fi
 fi
 
+if [[ ! -e ~/.FlameGraph ]]; then
+	git clone https://github.com/brendangregg/FlameGraph.git ~/.FlameGraph
+fi
+
 cp zshrc ~/.zshrc
