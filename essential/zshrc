@@ -110,10 +110,21 @@ function wifi-connect() {
 	sudo dhclient "${WIFI_NIC}"
 }
 
-function perf-svg() {
-	SVG_DATA_PATH="/tmp/perf.svgdata.${RANDOM}${RANDOM}${RANDOM}"
-	sudo perf script -f | ~/FlameGraph/stackcollapse-perf.pl > "$SVG_DATA_PATH"
-	~/.FlameGraph/flamegraph.pl "$SVG_DATA_PATH" > perf.svg
+function perfflame() {
+	if (( $# < 1 )); then
+		echo "Usage: perfflame EXECUTABLE EXECUTABLE_ARGS..."
+		return
+	fi
+
+	sudo perf record -g $@
+	SVG_DATA_PATH="/tmp/perf.${RANDOM}${RANDOM}${RANDOM}.svgdata"
+	SVG_PATH="/tmp/perf.${RANDOM}${RANDOM}${RANDOM}.svg"
+
+	sudo perf script -f | ~/.FlameGraph/stackcollapse-perf.pl > "$SVG_DATA_PATH"
+	~/.FlameGraph/flamegraph.pl "$SVG_DATA_PATH" > "$SVG_PATH"
+	rm -f perf.data
+
+	sensible-browser "$SVG_PATH"
 }
 
 alias v=vim_with_nesting_protection
