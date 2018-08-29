@@ -16,6 +16,8 @@ if [ ! -e ~/.zshrc-credential ]; then
 	fi
 fi
 
+sudo apt-get install -qq linux-tools-common
+sudo apt-get install -qq linux-tools-`uname -r`
 if [[ ! -e ~/.FlameGraph ]]; then
 	git clone https://github.com/brendangregg/FlameGraph.git ~/.FlameGraph
 fi
