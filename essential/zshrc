@@ -127,6 +127,15 @@ function perfflame() {
 	sensible-browser "$SVG_PATH"
 }
 
+function strip-ansi-escape() {
+	if (( $# < 1 )); then
+		echo "Usage: strip-ansi-escape FILES..."
+		return
+	fi
+
+	sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" $@
+}
+
 alias v=vim_with_nesting_protection
 alias vi=vim_with_nesting_protection
 alias vim=vim_with_nesting_protection
