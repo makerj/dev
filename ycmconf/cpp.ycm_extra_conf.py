@@ -38,6 +38,8 @@ flags = [
     '-Wno-write-strings',
     #'-DSOMETHING=123',
     '-I.',
+    '-Iinclude',
+    '-Isrc',
 ]
 
 

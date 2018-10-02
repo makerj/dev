@@ -36,6 +36,8 @@ flags = [
     '-std=gnu11',
     #'-DSOMETHING=123',
     '-I.',
+    '-Iinclude',
+    '-Isrc',
 ]
 
 
