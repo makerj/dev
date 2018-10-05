@@ -23,4 +23,8 @@ if ! hash lynx; then
 	sudo apt install lynx -y
 fi
 
+if ! hash xclip; then
+	sudo apt install xclip -y
+fi
+
 cp tmux.conf $HOME/.tmux.conf
