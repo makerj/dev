@@ -25,6 +25,7 @@ nohup.out
 *.iml
 .idea/
 cmake-build-debug/
+build/
 
 .classpath
 .project
