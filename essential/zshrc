@@ -136,6 +136,55 @@ function strip-ansi-escape() {
 	sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" $@
 }
 
+function tc-set() {
+	if (( $(tc -s qdisc | grep netem | wc -l) )) ; then
+		echo "traffic control is already enabled"
+		exit 1
+	fi
+
+	echo "Available Interfaces"
+	echo "===================="
+	ls -1 /sys/class/net/
+	echo "Configuration example: Interface[enp3s0] Bandwidth[4Mbit] Delay[10ms] Loss[10%]"
+	echo -n "Enter Interface: " && read NIC
+	echo -n "Enter Bandwidth: " && read BANDWIDTH
+	echo -n "Enter Delay:     " && read DELAY
+	echo -n "Enter Loss:      " && read LOSS
+
+	if [[ -z "$NIC" ]]; then
+		echo "Error: Interface is not specified"
+		return 1
+	fi
+
+	if [[ -z "$BANDWIDTH" ]]; then
+		echo "Error: Bandwidth is not specified"
+		return 1
+	fi
+
+	if [[ -z "$DELAY" ]]; then
+		echo "Error: Delay is not specified"
+		return 1
+	fi
+
+	if [[ -z "$LOSS" ]]; then
+		echo "Error: Loss is not specified"
+		return 1
+	fi
+
+	sudo tc qdisc add dev "${NIC}" handle 1: root htb default 11
+	sudo tc class add dev "${NIC}" parent 1:1 classid 1:11 htb rate "${BANDWIDTH}"
+	sudo tc qdisc add dev "${NIC}" parent 1:11 handle 10: netem delay "${DELAY}" loss "${LOSS}"
+
+	echo "Traffic control is started"
+}
+
+function tc-unset() {
+	NIC=$(tc -s qdisc | grep netem | grep -oP "dev \\w+ " | cut -f2 -d' ')
+	sudo tc qdisc del dev "${NIC}" root
+
+	echo "Traffic control is stopped"
+}
+
 alias v=vim_with_nesting_protection
 alias vi=vim_with_nesting_protection
 alias vim=vim_with_nesting_protection
@@ -148,3 +197,4 @@ fi
 if (( $VIMCHILD )); then
 	export PS1="(vim-shell) $PS1"
 fi
+
