@@ -139,7 +139,7 @@ function strip-ansi-escape() {
 function tc-set() {
 	if (( $(tc -s qdisc | grep netem | wc -l) )) ; then
 		echo "traffic control is already enabled"
-		exit 1
+		return 1
 	fi
 
 	echo "Available Interfaces"
@@ -157,30 +157,32 @@ function tc-set() {
 	fi
 
 	if [[ -z "$BANDWIDTH" ]]; then
-		echo "Error: Bandwidth is not specified"
-		return 1
+		BANDWIDTH="10Gbit"
 	fi
 
-	if [[ -z "$DELAY" ]]; then
-		echo "Error: Delay is not specified"
-		return 1
+	if [[ ! -z "$DELAY" ]]; then
+		DELAY_PARAM="delay"
 	fi
 
-	if [[ -z "$LOSS" ]]; then
-		echo "Error: Loss is not specified"
-		return 1
+	if [[ ! -z "$LOSS" ]]; then
+		LOSS_PARAM="loss"
 	fi
 
 	sudo tc qdisc add dev "${NIC}" handle 1: root htb default 11
-	sudo tc class add dev "${NIC}" parent 1:1 classid 1:11 htb rate "${BANDWIDTH}"
-	sudo tc qdisc add dev "${NIC}" parent 1:11 handle 10: netem delay "${DELAY}" loss "${LOSS}"
+	sudo tc class add dev "${NIC}" parent 1:1 classid 1:11 htb rate ${BANDWIDTH}
+	if [[ ! -z "${DELAY}${LOSS}" ]]; then
+		sudo tc qdisc add dev "${NIC}" parent 1:11 handle 10: netem ${DELAY_PARAM} ${DELAY} ${LOSS_PARAM} ${LOSS}
+	fi
 
 	echo "Traffic control is started"
 }
 
 function tc-unset() {
 	NIC=$(tc -s qdisc | grep netem | grep -oP "dev \\w+ " | cut -f2 -d' ')
-	sudo tc qdisc del dev "${NIC}" root
+	if [[ ! -z "$NIC" ]]; then
+		sudo tc qdisc del dev "${NIC}" root
+		return 1
+	fi
 
 	echo "Traffic control is stopped"
 }
