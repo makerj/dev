@@ -31,11 +31,14 @@ with os.popen("find ~/.conan/data -type d -regextype sed -regex '.*\/package\/[a
         flags += ['-I', header_directories.pop(0)]
 
 # JNI headers
-javah_path = subprocess.check_output('realpath `which javah`', shell=True)
-jdk_home = os.path.dirname(os.path.dirname(javah_path))
-flags += ['-I', os.path.join(jdk_home, 'include')]
-flags += ['-I', os.path.join(jdk_home, 'include', platform.system().lower())]
-flags += ['-D', 'COREDDS_VERSION="{}"'.format(subprocess.check_output("git log --pretty=format:'%h' -n 1", shell=True))]
+try:
+    javah_path = subprocess.check_output('realpath `which javah`', shell=True)
+    jdk_home = os.path.dirname(os.path.dirname(javah_path))
+    flags += ['-I', os.path.join(jdk_home, 'include')]
+    flags += ['-I', os.path.join(jdk_home, 'include', platform.system().lower())]
+    flags += ['-D', 'COREDDS_VERSION="{}"'.format(subprocess.check_output("git log --pretty=format:'%h' -n 1", shell=True))]
+except:
+    pass
 
 # include project include dirs
 flags += ['-I', 'include']
