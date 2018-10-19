@@ -64,6 +64,7 @@ au CursorHold * checktime
 set noswapfile
 set cursorline
 set clipboard=unnamedplus
+set mouse=a
 syntax on
 let g:load_doxygen_syntax=1
 if filereadable(expand("$HOME/.vim/plugged/gruvbox/colors/gruvbox.vim"))
