@@ -14,8 +14,8 @@ flags = [
     '-std=gnu11',
     '-x', 'c',
     '-I', os.path.join(os.getcwd(), 'include'),
-    '-I', os.path.join(os.getcwd(), 'test/include'),
-    '-I', os.path.join(os.getcwd(), 'src/gen/include'),
+    '-I', os.path.join(os.getcwd(), 'test', 'include'),
+    '-I', os.path.join(os.getcwd(), 'src', 'gen', 'include'),
 ]
 
 # include gcc system include dirs
