@@ -28,3 +28,4 @@ if ! hash xclip; then
 fi
 
 cp tmux.conf $HOME/.tmux.conf
+cp gdbinit $HOME/.gdbinit
