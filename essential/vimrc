@@ -61,7 +61,12 @@ set autoread
 set autowriteall
 set updatetime=60
 au CursorHold * checktime
+set history=1000 " command history depth
+set undolevels=1000
+set nobackup
 set noswapfile
+set visualbell
+set noerrorbells
 set cursorline
 set clipboard=unnamedplus
 set mouse=a
@@ -199,6 +204,8 @@ nnoremap <leader>v :!tig<CR>
 
 
 "Shortcuts :: Editor
+nnoremap j gj
+nnoremap k gk
 nnoremap ; :
 nnoremap _ zc
 nnoremap + zo
@@ -220,4 +227,9 @@ nnoremap <C-l> :Lines<CR>
 
 "Shortcuts :: External Utilties
 nnoremap <F9> :!export VIMCHILD=1 && $SHELL<CR>
+
+"A trick by Steve Losh for when you forgot to sudo before editing a file
+"that requires root privileges (typically /etc/hosts).
+"This lets you use w!! to do that after you opened the file already:
+cmap w!! w !sudo tee % >/dev/null
 
