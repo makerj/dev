@@ -145,7 +145,9 @@ func! s:SmartBuild(use_input)
         let l:target = input('Build Target: ')
     endif
 
-    if filereadable('CMakeLists.txt')
+    if filereadable('vmake')
+        :execute "!chmod +x vmake && ./vmake ".l:target
+    elseif filereadable('CMakeLists.txt')
         :execute "!mkdir -p build && cd build && conan install .. --build missing ; cmake .. && cmake --build . -- -j8 ".l:target
     elseif filereadable('Makefile')
         :execute "!make ".l:target
@@ -161,12 +163,12 @@ func! s:SearchAndReplace()
     " Search And Replace recursively
     :wa
 
-	let l:basedir = input('Base Directory: ')
-	let l:sfrom = input('String From: ')
-	let l:sto = input('String To: ')
+    let l:basedir = input('Base Directory: ')
+    let l:sfrom = input('String From: ')
+    let l:sto = input('String To: ')
 
-	:execute 'args '.l:basedir.'**/*.{c,h}'
-	:execute 'argdo %s/'.l:sfrom.'/'.l:sto.'/gc'
+    :execute 'args '.l:basedir.'**/*.{c,h}'
+    :execute 'argdo %s/'.l:sfrom.'/'.l:sto.'/gc'
 endfunc
 nnoremap <leader>r :call <SID>SearchAndReplace()<CR>
 
@@ -174,12 +176,12 @@ func! s:KillAllBuffer()
     " Kill all opened buffers
     :wa
 
-	let l:index = 0
-	let l:buffer_count = len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
-	while l:index < l:buffer_count
-		:BD
-		let l:index += 1
-	endwhile
+    let l:index = 0
+    let l:buffer_count = len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
+    while l:index < l:buffer_count
+        :BD
+        let l:index += 1
+    endwhile
 endfunc
 nnoremap <leader>Z :call <SID>KillAllBuffer()<CR>
 
