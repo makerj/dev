@@ -10,6 +10,8 @@ flags = [
     '-Wno-long-long',
     '-Wno-unused-parameter',
     '-Wno-variadic-macros',
+    '-Wno-pragmas',
+    '-Wno-unknown-warning-option',
     '-fexceptions',
     '-std=gnu11',
     '-x', 'c',
