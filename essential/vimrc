@@ -195,7 +195,6 @@ nnoremap <leader>P :echo expand('%:p')<CR>
 nnoremap <leader>q :YcmCompleter GetDoc<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
-nnoremap <C-i> :YcmCompleter GoToDeclaration<CR>
 nnoremap <C-o> <C-o>zz
 
 nnoremap <leader>d :Dox<CR>
