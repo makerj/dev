@@ -194,6 +194,7 @@ nnoremap <leader>p :echo @%<CR>
 "Print current file full-path
 nnoremap <leader>P :echo expand('%:p')<CR>
 
+nnoremap <TAB> :YcmCompleter GoTo<CR>
 nnoremap <leader>q :YcmCompleter GetDoc<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
