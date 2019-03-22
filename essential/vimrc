@@ -208,6 +208,7 @@ nnoremap <leader>v :!tig<CR>
 
 
 "Shortcuts :: Editor
+nnoremap n nzz
 nnoremap j gj
 nnoremap k gk
 nnoremap ; :
