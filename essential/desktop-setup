@@ -9,6 +9,7 @@ if hash X; then
 
 	if (( $UBUNTU_18_04 )); then
 		sudo apt-get -qq install ubuntu-unity-desktop -y
+		sudo apt-get -qq install network-manager. -y
 	fi
 
 	UNITY_TWEAK_TOOL_EXISTS=$(echo $PACKAGE_LIST | grep unity-tweak-tool | wc -l)
