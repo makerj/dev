@@ -57,10 +57,10 @@ set laststatus=2
 set title
 set smartindent
 set autoindent
-set autoread
 set autowriteall
-set updatetime=60
-au CursorHold * checktime
+set autoread              " automatic reload every `updatetime` ms
+set updatetime=1000       " automatic reload every `updatetime` ms
+au CursorHold * checktime " automatic reload every `updatetime` ms
 set history=1000 " command history depth
 set undolevels=1000
 set nobackup
