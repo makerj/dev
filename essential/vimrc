@@ -15,13 +15,11 @@ Plug 'rdnetto/YCM-Generator',           {'branch': 'develop', 'on': 'YcmGenerate
 Plug 'morhetz/gruvbox'
 Plug 'benmills/vimux'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/DoxygenToolkit.vim',    {'on': 'Dox'}
-"Plug 'tpope/vim-sleuth' "Indent Detctor
 Plug 'vim-scripts/Conque-GDB',          {'on': 'ConqueGdb'}
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
@@ -105,10 +103,6 @@ let g:ConqueGdb_Leader = '\'
 "ConqueGdb_Leader p => print value
 "
 let g:airline#extensions#tabline#enabled = 1
-
-let g:UltiSnipsExpandTrigger="<C-j>"
-let g:UltiSnipsJumpForwardTrigger="<C-l>"
-let g:UltiSnipsJumpBackwardTrigger="<C-h>"
 
 let g:move_key_modifier = 'C'
 
