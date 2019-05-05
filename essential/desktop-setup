@@ -37,5 +37,7 @@ if hash X; then
 		# Removing annoying ubuntu internal error report popups
 		sudo apt purge apport -y
 	fi
+
+	sudo apt-get -qq install kolourpaint -y
 fi
 
