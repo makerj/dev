@@ -38,6 +38,7 @@ if hash X; then
 		sudo apt purge apport -y
 	fi
 
-	sudo apt-get -qq install kolourpaint -y
+	sudo apt-get -qq install kolourpaint xbindkeys -y
+	cp xbindkeysrc ~/.xbindkeysrc
 fi
 

@@ -1,0 +1,4 @@
+"xrandr --rotate left"
+Shift+Alt + Left
+"xrandr --rotate normal"
+Shift+Alt + Right
