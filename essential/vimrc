@@ -197,8 +197,6 @@ nnoremap <C-o> <C-o>zz
 
 nnoremap <leader>d :Dox<CR>
 nnoremap <leader>n :ParseNumber<CR>
-nnoremap <leader>j :CCTreeTraceForward<CR>
-nnoremap <leader>J :CCTreeTraceReverse<CR>
 nnoremap <leader>v :!tig<CR>
 
 
