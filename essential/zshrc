@@ -28,6 +28,7 @@ alias gitclean='git reset --hard;git clean -fdx'
 alias gitstatus='git status'
 alias gitsubmodule='git submodule update --init --recursive'
 alias gitc='git add -A; git commit --amend'
+alias gitp='git push'
 alias update='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y'
 alias lynx='lynx -vikeys '
 export TERM="xterm-256color"	# To prevent the color scheme from crashing
