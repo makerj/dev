@@ -183,6 +183,7 @@ endfunc
 nnoremap <leader>Z :call <SID>KillAllBuffer()<CR>
 
 nnoremap <S-e> :Files<CR>
+nnoremap <S-f> :Tags<CR>
 
 "Print current file path
 nnoremap <leader>p :echo @%<CR>
