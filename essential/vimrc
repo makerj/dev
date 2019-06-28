@@ -176,6 +176,7 @@ func! s:KillAllBuffer()
     let l:index = 0
     let l:buffer_count = len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
     while l:index < l:buffer_count
+		:bn
         :BD
         let l:index += 1
     endwhile
