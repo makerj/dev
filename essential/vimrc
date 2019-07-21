@@ -219,6 +219,7 @@ nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
 nnoremap <BS> hx
 inoremap <C-w> <C-o>de
 inoremap <C-b> <C-o>db
+nnoremap <S-w> f_
 vnoremap t :TransItBlock<CR>
 vnoremap T :TransItBlockPut<CR>
 nnoremap <Space> <C-w>w
