@@ -52,6 +52,7 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4 "set expandtab " use whitespace for tab character
 set cindent
+set cinoptions=g-1
 set incsearch
 set hlsearch
 set ignorecase
