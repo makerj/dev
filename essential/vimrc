@@ -21,8 +21,6 @@ Plug 'tpope/vim-commentary'
 Plug 'matze/vim-move'
 Plug 'vim-scripts/DoxygenToolkit.vim',    {'on': 'Dox'}
 Plug 'vim-scripts/Conque-GDB',          {'on': 'ConqueGdb'}
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'makerj/vim-transit'
@@ -40,6 +38,12 @@ Plug 'pboettch/vim-cmake-syntax'
 Plug 'vim-scripts/VisIncr' " increase/decrease number, date
 Plug 'DougBeney/image.vim'
 
+Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'storyn26383/vim-vue'
+Plug 'digitaltoad/vim-pug'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim'
 call plug#end()
 
 "Basic Setups -----------------------------------------------------------------
