@@ -44,4 +44,9 @@ if ! hash ag; then
 	sudo apt install silversearcher-ag -y
 fi
 
-sudo apt-get install -qq libc++-dev glibc-doc manpages-posix-dev -y
+# Install External Documents
+# C and POSIX
+sudo apt-get install -qq glibc-doc manpages-posix-dev -y
+# C++
+sudo apt-get install -qq libc++-dev libstdc++-`gcc -dumpversion`-doc cppman -y
+
