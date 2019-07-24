@@ -73,7 +73,6 @@ set visualbell
 set noerrorbells
 set cursorline
 set clipboard=unnamedplus
-set mouse=a
 syntax on
 let g:load_doxygen_syntax=1
 if filereadable(expand("$HOME/.vim/plugged/gruvbox/colors/gruvbox.vim"))
@@ -130,6 +129,9 @@ autocmd FileType c setlocal commentstring=//\ %s
 autocmd FileType c set completeopt-=preview
 autocmd FileType cpp setlocal commentstring=//\ %s
 autocmd FileType cmake setlocal commentstring=#\ %s
+
+" Enable C++ syntax highlighting for libc++ headers
+au BufRead * if search('.*C[+][+].*', 'nw') | setlocal ft=cpp | endif
 
 "Shortcuts --------------------------------------------------------------------
 let mapleader=","
