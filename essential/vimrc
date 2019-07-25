@@ -150,10 +150,17 @@ func! s:SmartBuild(use_input)
     endif
 
     if filereadable('vmake')
+        " vmake build system
         :execute "!chmod +x vmake && ./vmake ".l:target
     elseif filereadable('CMakeLists.txt')
-        :execute "!mkdir -p build && cd build && conan install .. --build missing ; cmake .. && cmake --build . -- -j8 ".l:target
+        " cmake build system
+        if filereadable('conanfile.py')
+            :execute "!mkdir -p build && cd build && conan install .. --build missing && cmake --build . -- -j8".l:target
+        else
+            :execute "!mkdir -p build && cd build && cmake --build . -- -j8".l:target
+        endif
     elseif filereadable('Makefile')
+        " make build system
         :execute "!make ".l:target
     else
         let l:errmsg = 'build script is not found. aborting'
@@ -183,7 +190,7 @@ func! s:KillAllBuffer()
     let l:index = 0
     let l:buffer_count = len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
     while l:index < l:buffer_count
-		:bn
+        :bn
         :BD
         let l:index += 1
     endwhile

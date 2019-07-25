@@ -35,7 +35,10 @@ export TERM="xterm-256color"	# To prevent the color scheme from crashing
 								# when using tmux and vim at the same time
 
 function cmakebuild() {
-	(mkdir -p build && cd build && conan install --update .. --build missing)
+	mkdir -p build
+	if [[ -f conanfile.py ]]; then
+		(cd build && conan install --update .. --build missing)
+	fi
 	(cd build && cmake .. && cmake --build . -- VERBOSE=1 -j$(nproc) $@)
 }
 
