@@ -131,7 +131,7 @@ autocmd FileType cpp setlocal commentstring=//\ %s
 autocmd FileType cmake setlocal commentstring=#\ %s
 
 " Enable C++ syntax highlighting for libc++ headers
-au BufRead * if search('.*C[+][+].*', 'nw') | setlocal ft=cpp | endif
+au BufRead * if search('[/][/].*C[+][+].*', 'nw') | setlocal ft=cpp | endif
 
 "Shortcuts --------------------------------------------------------------------
 let mapleader=","
