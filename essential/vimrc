@@ -83,6 +83,8 @@ set bg=dark
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 "Plugin Setups -----------------------------------------------------------------
+let g:NERDTreeIgnore=['__pycache__', '\~$']
+
 let g:tagbar_expand = 1
 let g:tagbar_autoshowtag = 1
 
