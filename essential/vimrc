@@ -157,9 +157,9 @@ func! s:SmartBuild(use_input)
     elseif filereadable('CMakeLists.txt')
         " cmake build system
         if filereadable('conanfile.py')
-            :execute "!mkdir -p build && cd build && conan install .. --build missing && cmake .. && cmake --build . -- -j8".l:target
+            :execute "!mkdir -p build && cd build && conan install .. --build missing && cmake .. && cmake --build . -- -j8 ".l:target
         else
-            :execute "!mkdir -p build && cd build && cmake .. && cmake --build . -- -j8".l:target
+            :execute "!mkdir -p build && cd build && cmake .. && cmake --build . -- -j8 ".l:target
         endif
     elseif filereadable('Makefile')
         " make build system
