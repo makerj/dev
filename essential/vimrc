@@ -164,6 +164,9 @@ func! s:SmartBuild(use_input)
     elseif filereadable('Makefile')
         " make build system
         :execute "!make ".l:target
+    elseif filereadable('Cargo.toml')
+        " cargo build system
+        :execute "!cargo build ".l:target
     else
         let l:errmsg = 'build script is not found. aborting'
         echohl WarningMsg | echo l:errmsg  | echohl None
