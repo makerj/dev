@@ -63,8 +63,8 @@ function gituser() {
 	else
 		if [[ "$1" == "junhui" ]]; then
 			echo "Change Git User to 'junhui'"
-			git config --global user.name "junhui"
-			git config --global user.email "junhui@gurum.cc"
+			git config --global user.name "junhee"
+			git config --global user.email "junhee@sain-soft.com"
 		elif [[ "$1" == "makerj" ]]; then
 			echo "Change Git User to 'makerj'"
 			git config --global user.name "makerj"

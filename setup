@@ -9,6 +9,8 @@ if grep -q "16.04" /etc/issue ; then
 	export UBUNTU_18_04=0
 elif grep -q "18.04" /etc/issue ; then
 	export UBUNTU_18_04=1
+elif grep -q "20.04" /etc/issue ; then
+	export UBUNTU_18_04=1
 else
 	echo "Unsupported platform"
 	cat /etc/issue
