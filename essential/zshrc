@@ -3,6 +3,11 @@
 
 # antigen installation. -------------------------------------------------------
 source ~/antigen.zsh
+if [[ `uname` == "Darwin" ]]; then
+	autoload -U colors && colors
+	setopt promptsubst
+fi
+
 antigen use oh-my-zsh
 antigen theme ys
 
